@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('fonts/iconfont.eot');
+  src: url('fonts/iconfont.eot?#iefix') format('eot'),
+    url('fonts/iconfont.woff2') format('woff2'),
+    url('fonts/iconfont.woff') format('woff'),
+    url('fonts/iconfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icon-about1: "\EA01";
+$icon-about2: "\EA02";
+$icon-about3: "\EA03";
+$icon-about4: "\EA04";
+$icon-about5: "\EA05";
+$icon-facebook: "\EA06";
+$icon-hexagon1: "\EA07";
+$icon-hexagon2: "\EA08";
+$icon-hexagon3: "\EA09";
+
+
+%icon {
+  font-family: "iconfont";
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  @extend %icon;
+  display: inline-block;
+}
+
+.icon-about1:before { content: $icon-about1; }
+.icon-about2:before { content: $icon-about2; }
+.icon-about3:before { content: $icon-about3; }
+.icon-about4:before { content: $icon-about4; }
+.icon-about5:before { content: $icon-about5; }
+.icon-facebook:before { content: $icon-facebook; }
+.icon-hexagon1:before { content: $icon-hexagon1; }
+.icon-hexagon2:before { content: $icon-hexagon2; }
+.icon-hexagon3:before { content: $icon-hexagon3; }

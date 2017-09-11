@@ -1,0 +1,127 @@
+---
+title: Eva-group
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+<header class="header">
+	<!--begin l-->
+	<div class="l">
+		<div class="heder__logo">
+			<a href="#">
+				<img src="img/logo.png" alt="logo">
+			</a>
+		</div>
+		<div class="menu-btn"><span></span></div>
+		<div class="header__menu">
+			<a href="#">Главная</a>
+			<a href="#">О компании</a>
+			<a href="#">Инвесторам</a>
+			<a href="#">Партнерам</a>
+			<a href="#">Обратная связь</a>
+		</div>
+		<div class="header__user">W
+			<a class="login" href="#">Вход   /</a>
+			<a class="registration" href="#">   Регистрация</a>
+			<a class="vk" href="#"></a>
+		</div>
+	</div>
+	<!--end l-->
+
+</header>
+<div class="fscreen">
+	<div class="l">
+		<h1 class="fscreen__title title-lg">Начни зарабатывать <br>
+			<span>уже сегодня</span>
+		</h1>
+		<div class="fscreen__inner">
+			{% import "data/data.html" as tests %}
+			{% for test in tests.list %}
+			<div class="hexagon">
+				<div class="hexagon__img">
+					{{mixins.icon(test.img)}}
+				</div>
+				<p class="hexagon__main-text">{{test.mainText}}</p>
+				<p class="hexagon__sec-text">{{test.secText}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!--begin stat-list-->
+<div class="stat-list">
+	<div class="l">
+		{% import "data/data.html" as tests %}
+		{% for test in tests.stat %}
+		<div class="stat-block">
+			<p class="stat-block__main-text">{{test.mainText}}</p>
+			<div class="stat-block__sec-text">{{test.secText}}</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<!--end stat-list-->
+<!--begin about-->
+<div class="about">
+	<div class="l">
+		<h2 class="title-m title-m--blue">
+			Немного <span>о нас</span>
+		</h2>
+		<div class="about__inner">
+			<div class="about__left">
+				<p>Koмпания EVA Group создана инвесторами для инвесторов. </p>
+				<p>В нашей команде специалисты с большим опытом работы в различных сферах и направлениях. </p>
+				<p>Управляющие биржевыми инструментами показывают свою продуктивность и профессионализм на протяжении длительного времени. </p>
+				<p>Специалисты по анализу криптовалют совершают торговые операции не только по тренду на долгосрочную перспективу, но открывают и короткие позиции, что позволяет обеспечить стабильные и высокие показатели доходности.</p>
+				<p>Аналитики в направлении спортивного анализа разработали уникальный программный комплекс, который круглосуточно занимается анализом спортивных событий и делает прогнозы с высокой точностью тем самым обеспечивая надежность и уверенность в этом направлении. </p>
+			</div>
+			<div class="about__right">
+				<div class="about__list">
+					{% import "data/data.html" as tests %}
+					{% for test in tests.about %}
+					<div class="about__item">
+						<i class="about__icon">
+							{{mixins.icon(test.img)}}
+						</i>
+						<span>
+							{{test.text}}
+						</span>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end about-->
+<!--begin plans-->
+<div class="plans">
+	<div class="l">
+		<h2 class="plans__title title-m title-m--white">Тарифные планы</h2>
+	</div>
+</div>
+<!--end plans-->
+
+
+
+<!-- 	{# variable example #}
+	<h1>{{title}}</h1>
+
+	
+	{# partial example #}
+	{% include "partials/_header.html" %}
+
+	{# mixin example #}
+	{{mixins.icon('facebook')}}
+
+
+	{# data usage example #}
+		{% import "data/data.html" as tests %}
+		
+		{% for test in tests.list %}
+		<li>{{test.title}}</li>
+		{% endfor %}
+		{# end of example #} -->
+
+
+		{% endblock %}
