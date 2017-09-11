@@ -14,10 +14,14 @@ $icon-about2: "\EA02";
 $icon-about3: "\EA03";
 $icon-about4: "\EA04";
 $icon-about5: "\EA05";
-$icon-facebook: "\EA06";
-$icon-hexagon1: "\EA07";
-$icon-hexagon2: "\EA08";
-$icon-hexagon3: "\EA09";
+$icon-earn1: "\EA06";
+$icon-earn2: "\EA07";
+$icon-earn3: "\EA08";
+$icon-earn4: "\EA09";
+$icon-facebook: "\EA0A";
+$icon-hexagon1: "\EA0B";
+$icon-hexagon2: "\EA0C";
+$icon-hexagon3: "\EA0D";
 
 
 %icon {
@@ -41,6 +45,10 @@ $icon-hexagon3: "\EA09";
 .icon-about3:before { content: $icon-about3; }
 .icon-about4:before { content: $icon-about4; }
 .icon-about5:before { content: $icon-about5; }
+.icon-earn1:before { content: $icon-earn1; }
+.icon-earn2:before { content: $icon-earn2; }
+.icon-earn3:before { content: $icon-earn3; }
+.icon-earn4:before { content: $icon-earn4; }
 .icon-facebook:before { content: $icon-facebook; }
 .icon-hexagon1:before { content: $icon-hexagon1; }
 .icon-hexagon2:before { content: $icon-hexagon2; }
