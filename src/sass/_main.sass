@@ -1,0 +1,696 @@
+.header
+	background: $blue
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	padding-top: 20px
+	padding-bottom: 33px
+	z-index: 10
+	+m
+		padding: 10px 0
+	&__inner
+		+clr
+		left: 15px
+	&__logo
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		+m
+			position: relative
+			top: 0%
+			transform: translateY(0%)
+			float: left
+			margin-top: 7px
+			img
+				height: 35px
+				width: auto
+		a
+			display: block
+	&__drop-mob
+		+m
+			position: fixed
+			right: 15px
+			top: 66px
+			border: 1px solid $blue
+			background:  $blue
+			z-index: 10
+			padding: 5px
+			display: none
+	&__menu
+		// position: absolute
+		// left: 50%	
+		// transform: translateX(-50%)
+		margin-top: 15px
+		text-align: center
+		+m
+			margin-bottom: 10px
+			margin-top: 0
+		a
+			color: $white
+			+rob
+			margin-right: 34px
+			position: relative
+			+trans
+			+d
+				margin-right: 20px
+			+m
+				display: block
+				margin-right: 0
+				text-align: left
+				padding: 7px 0
+			&:hover
+				&:after
+					width: 120%
+			&:last-of-type
+				margin-right: 0
+			&:before, &:after
+				content: ''
+				position: absolute
+				+trans
+				+m
+					display: none
+			&:before
+				top: -5px
+				left: -5px
+				bottom: -5px
+				right: -5px
+			&:after
+				bottom: -10px
+				width: 0%
+				left: -10%
+				height: 1px
+				background: $white
+				transform-origin: 50% 50%
+
+
+			&.active
+				&:after
+					width: 120%
+	&__user
+		position: absolute
+		right: 15px
+		top: 90%
+		transform: translateY(-50%)
+		+m
+			position: relative
+			transform: translateY(0%)
+			float: right
+			right: 0
+			margin-top: 15px
+		a
+			+rob
+			color: $white
+
+		.vk
+			display: inline-block
+			vertical-align: top
+			margin-left: 24px
+			width: 34px
+			height: 34px
+			border: 1px solid $white
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			position: relative
+			top: -7px
+			+m
+				margin-left: 15px
+		span
+			display: inline-block
+			vertical-align: top
+			color: $white
+			margin: 0 5px
+.menu-btn
+	display: none
+	+m
+		display: block
+		position: absolute
+		right: 15px
+		top: 10px
+		width: 26px
+		height: 20px
+		border-top: 2px solid $white
+		border-bottom: 2px solid $white
+		padding-top: 7px
+		span
+			display: block
+			height: 2px
+			background: $white
+.fscreen
+	margin-top: 75px
+	background-image: url('../img/fscreen-bg.png')
+	background-repeat: no-repeat
+	background-position: 50% 0
+	padding-top: 60px
+	text-align: center
+	padding-bottom: 122px
+	z-index: 1
+	position: relative
+	+m
+
+		background-image:  url('../img/fscreen-bg-mob.jpg')
+		margin-top: 52px
+		background-size: cover
+		background-position: 50% 100%
+		padding-bottom: 30px
+	&__inner
+		font-size: 0
+	&__title
+		margin-bottom: 50px
+		+d
+			margin-bottom: 90px
+		+m
+			margin-bottom: 50px
+.hexagon
+	width: 326px
+	height: 291px
+	display: inline-block
+	vertical-align: top
+	margin: 0 9px
+	padding: 30px 65px 0
+	+d
+		width: 280px
+		background-size: contain
+		background-repeat: no-repeat
+		padding: 20px 40px 0
+		height: 250px
+	+m
+		display: block
+		margin: 0 auto 20px
+	&__img
+		margin: 0 auto
+		position: relative
+		margin-bottom: 45px
+		svg
+			fill: $white
+			font-size: 68px
+			+d
+				font-size: 40px
+		&:after
+			content: ''
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			width: 30px
+			height: 2px
+			background: $orange
+			bottom: -20px
+	&__main-text, &__sec-text
+		+rob
+		font-size: 28px
+		color: $white
+		font-weight: 700
+		+d
+			font-size: 22px
+	&__sec-text
+		font-weight: 300
+.stat-list
+	background: $blue
+	position: relative
+	top: -56px
+	padding-top: 60px
+	+m
+		top: 0
+		padding-top: 20px
+		margin-bottom: 30px
+	&__inner
+		font-size: 0
+		text-align: center
+.stat-block
+	display: inline-block
+	vertical-align: top
+	max-width: 200px
+	margin-bottom: 30px
+	color: $white
+	margin-right: 95px
+	+d
+		max-width: 170px
+	+m
+		margin: 0 15px  20px
+	&:last-of-type
+		margin-right: 0
+		+m
+			margin-right: 15px
+	&__main-text
+		font-size: 60px
+		font-weight: 700
+		+rob
+		+m
+			font-size: 30px
+		span
+			font-size: 48px
+			font-weight: 400
+			position: relative
+			top: -3px
+			+m
+				font-size: 26px
+	&__sec-text
+		font-size: 24px
+		font-weight: 400
+		+play
+		+m
+			font-size: 20px
+.about
+	padding-bottom: 50px
+	&__inner
+		+clr
+	&__left
+		float: left
+		max-width: 650px
+		+d
+			max-width: 550px
+		+m
+			max-width: 100%
+			float: none
+			margin-bottom: 30px
+	&__right
+		float: right
+		max-width: 375px
+		padding-right: 50px
+		+m
+			float: none
+			max-width: 100%
+			padding-right: 0
+	&__title
+		margin-bottom: 40px
+	&__item
+		margin-bottom: 25px
+		position: relative
+		padding-left: 50px
+		span
+			color: $blue
+			font-size: 18px
+			font-weight: 700
+	&__icon
+		position: absolute
+		margin-right: 15px
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		svg
+			fill: $orange
+			font-size: 31px
+.plans
+	background-repeat: no-repeat
+	background-position: 50% 0
+	padding-top: 30px
+	padding-bottom: 70px
+	background-size: cover
+	&__title
+		text-align: center
+		margin-bottom: 50px
+	&__list
+		display: flex
+		justify-content: space-between
+		margin-bottom: 50px
+		+m
+			display: block
+			text-align: center
+	&__descr
+		color: $white
+		margin-bottom: 30px
+.plan
+	flex-basis: 18%
+	background: $blue
+	+trans
+	+m
+		width: 200px
+		display: inline-block
+		vertical-align: top
+		margin: 0 40px 40px
+	&--Bronze
+		.plan__top
+			background: url('../img/plan1.png') 50% 0 no-repeat 
+	&--Silver
+		.plan__top
+			background: url('../img/plan2.png') 50% 0 no-repeat 
+	&--Gold
+		.plan__top
+			background: url('../img/plan3.png') 50% 0 no-repeat 
+	&--Platinum
+		.plan__top
+			background: url('../img/plan4.png') 50% 0 no-repeat 
+	&--Diamond
+		.plan__top
+			background: url('../img/plan5.png') 50% 0 no-repeat 
+	&:hover
+		background: $orange
+		.plan__bg-line
+			opacity: 1
+	&__top
+		text-align: center
+		padding-bottom: 33px
+		+rob
+		position: relative
+		z-index: 1
+	&__bg-line
+		background-repeat: no-repeat
+		background-position:  50% 0
+		height: 19px
+		position: absolute
+		bottom: 3px
+		left: 0
+		width: 100%
+		z-index: 1
+		opacity: 0
+		+trans
+	&__name
+		font-size: 36px
+		font-weight: 700
+		color: $blue
+		margin-bottom: 7px
+	&__perc
+		+play
+		font-size: 18px
+		color: $white
+		span
+			+rob
+			font-size: 36px
+			font-weight: 700
+	&__bottom
+		+trans
+		position: relative
+		top: -30px
+		+play
+		color: $white
+		padding: 35px 14px 20px
+		+d
+			padding: 35px 8px 20px
+		+m
+			text-align: left
+	&__deposit
+		margin-bottom: 23px
+		text-align: center
+	&__line
+		margin-bottom: 20px
+		font-size: 0
+		span
+			font-size: 16px
+			display: inline-block
+			vertical-align: top
+			width: 50%
+			+d
+				font-size: 14px
+.earn
+	margin-top: 45px
+	margin-bottom: 80px
+	&__title
+		margin-bottom: 45px
+	.two-col__left
+		padding-right: 15px
+		width: 585px
+	.two-col__right
+		padding-left: 15px
+		width: calc(100% - 585px)
+	&__steps
+.step
+	min-height: 117px
+	padding-right: 110px
+	margin-bottom: -45px
+	// padding-left: 50px
+	position: relative
+	width: 310px
+	&:last-of-type
+		margin-bottom: 0
+		.step__icon
+			&:after
+				display: none
+	&--right
+		margin-left: auto
+		padding-right: 0
+		padding-left: 70px
+		.step__icon
+			right: auto
+			left: 0
+			// transform: translate( -50%, -50%)
+		&:before,	&:after
+			right: auto
+		&:before
+			left: 54px
+		&:after
+			left: 18px
+	&__img
+		margin-bottom: 5px
+		margin-left: 55px
+	svg
+		fill: $blue
+		font-size: 51px
+	p
+		text-align: left
+	&__icon
+		+s(hexagon-yellow)
+		position: absolute
+		top: 48px
+		transform: translateX(-50%)
+		right: 13px
+		font-size: 18px
+		font-weight: 700
+		color: $orange
+		padding-top: 10px
+		text-align: center
+		&:after
+			content: ''
+			position: absolute
+			left: 50%
+			height: 21px
+			width: 1px
+			background: $orange
+			bottom: -25px
+
+	&:before, &:after
+		content: ''
+		position: absolute
+		background: $orange
+		top: 70px
+		transform: translateY(-50%)
+		right: 0
+	&:before
+		width: 6px
+		height: 6px
+		border-radius: 50%
+		right: 100px
+	&:after
+		height: 1px
+		width: 36px
+		right: 66px
+.pprog
+	background-repeat: no-repeat
+	background-position: 50% 0
+	background-size: cover
+	padding-top: 45px
+	padding-bottom: 92px
+
+	&__title
+		text-align: center
+		margin-bottom: 20px
+	&__descr-top, &__descr-bottom
+		max-width: 849px
+		margin: 0 auto
+	&__descr-top
+		
+		position: relative
+		
+		padding: 23px 5px 23px 50px
+		background: rgba(13, 30, 46, 0.62)
+		margin-bottom: 42px
+		p
+			color: $white
+	&__sec-title
+		margin-bottom: 28px
+		text-align: center
+	&__descr-bottom
+		color: $white
+		margin-bottom: 35px
+.ptable
+	background: rgba(7, 108, 172, 0.62)
+	max-width: 849px
+	margin: 0 auto 28px
+	font-size: 0
+	padding: 0 25px 20px
+	&__col
+		display: inline-block
+		width: 138px
+		vertical-align: top
+		margin-left: -1px
+		+trans
+		&:not(.ptable__col--first)
+			&:hover
+				background: $orange2
+				.ptable__cell--name
+					color: $white
+		&--first
+			width: 102px
+			.ptable__cell--name
+				text-align: left
+	&__cell
+		font-size: 18px
+		color: $white
+		vertical-align: top
+		min-height: 74px
+		text-align: center
+		position: relative
+		border-bottom: 1px solid $white
+		&:not(.ptable__cell--name, .ptable__cell--desc )
+			&:before
+				content: ''
+				position: absolute
+				height: 34px
+				background: $white
+				width: 1px
+				top: 50%
+				transform: translateY(-50%)
+				left: 0
+		&--name
+			padding-top: 20px
+			padding-bottom: 17px
+			+rob
+			font-size: 24px
+			font-weight: 700
+			color: $orange
+			+trans
+		&:not(.ptable__cell--name, .ptable__cell--desc )
+			padding-top: 28px
+		&.ptable__cell--desc
+			padding-top: 14px
+.callback
+	padding-top: 40px
+	padding-bottom: 68px
+	&__two-col
+		max-width: 950px
+		margin: 0 auto
+	p
+		+rob
+		font-size: 20px
+		letter-spacing: -0.5px
+		margin-bottom: 28px
+	.two-col__left
+		padding-right: 90px
+
+	.two-col__right
+		padding-left: 90px
+	&__inner
+		margin-bottom: 45px
+	&__link
+		display: block
+		+trans
+		padding: 17px 40px
+		color: $black
+		font-size: 18px
+		line-height: 1
+		margin-bottom: 10px
+		&:hover
+			background: $orange2
+			color: $white
+.psystem
+	background: $bg-blue
+	padding-top: 22px
+	text-align: center
+	padding-bottom: 35px
+	&__title
+		margin-bottom: 45px
+		&:before
+			display: none
+	&__list
+		font-size: 0
+	&__img
+		display: inline-block
+		vertical-align: top
+		margin: 0 25px
+.footer
+	background: $blue-d
+	padding: 18px 0
+	color: $white
+	font-size: 18px
+	line-height: 1
+	&__inner
+		+clr
+		position: relative
+	&__logo
+		float: left
+	&__right
+		float: right
+		margin-top: 15px
+	&__center
+		+vcenter
+.popup
+	position: fixed
+	z-index: 15
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	display: none
+	&__overlay
+		height: 100%
+		background: rgba(#000, 0.5)
+	&__content
+		padding: 30px 60px 45px
+		+vcenter
+		width: 499px
+		// height: 438px
+		background-color: $white
+		border: 1px solid $blue
+		text-align: center
+	&__title
+		font-size: 30px
+		font-weight: 700
+		color: $blue
+		margin-bottom: 15px
+	&__title-sec
+		font-size: 24px
+		color: $blue
+		margin-bottom: 30px
+	&__text-big
+		font-size: 24px
+		font-weight: 700
+	&__text
+		+rob
+		font-size: 18px
+		font-weight: 400
+		color: $black
+		margin-bottom: 30px
+	&__requir-text
+		margin-top: 25px
+		span
+			color: #fb1a03
+	&__close
+		position: absolute
+		width: 62px
+		height: 62px
+		background: $blue
+		top: 0
+		right: -80px
+		cursor: pointer
+		+trans
+		&:before
+			content: ''
+			+vcenter
+			+s(close)
+		&:hover
+			background: $orange3
+.pfield
+	display: block
+	width: 100%
+	height: 48px
+	line-height: 48px
+	background-color: $white
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.75)
+	margin-bottom: 28px
+	padding: 0 15px
+	+rob
+	font-size: 18px
+.psubmit
+	margin-top: 8px
+	display: inline-block
+	vertical-align: top
+	width: 250px
+	height: 44px
+	background: $orange3
+	line-height: 44px
+	+trans
+	font-size: 24px
+	color: $white
+	border: 1px solid $orange3
+	&:hover
+		color: $orange3
+		background: transparent

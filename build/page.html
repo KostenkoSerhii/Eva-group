@@ -21,14 +21,17 @@
             <div class="header__logo"> <a href="#">
 					<img src="img/logo.png" alt="logo">
 				</a> </div>
-            <div class="menu-btn"><span></span></div>
-            <div class="header__menu"> <a class="active" href="#">Главная</a> <a href="#">О компании</a> <a href="#">Инвесторам</a> <a href="#">Партнерам</a> <a href="#">Обратная связь</a> </div>
-            <div class="header__user"> <a class="login" href="#">Вход    </a> <span>/</span> <a class="registration" href="#">   Регистрация</a> <a class="vk" href="#" style="background-image: url('img/vk.png');"></a> </div>
+            <div class="menu-btn js-menu-btn"><span></span></div>
+            <div class="header__drop-mob js-drop-mob">
+              <div class="header__menu"> <a class="js-scroll active" data-scroll="js-fscreen" class="active" href="#">Главная</a> <a class="js-scroll" data-scroll="js-about" href="#">О компании</a> <a class="js-scroll" data-scroll="js-plans" href="#">Инвесторам</a> <a class="js-scroll"
+                  data-scroll="js-pprog" href="#">Партнерам</a> <a class="js-scroll" data-scroll="js-callback" href="#">Обратная связь</a> </div>
+              <div class="header__user"> <a class="login" href="#">Вход    </a> <span>/</span> <a class="registration" href="#">   Регистрация</a> <a class="vk" href="#" style="background-image: url('img/vk.png');"></a> </div>
+            </div>
           </div>
         </div>
         <!--end l-->
       </header>
-      <div class="fscreen" style="background-image: url('img/fscreen-bg.png');">
+      <div class="fscreen js-fscreen">
         <div class="l">
           <h1 class="fscreen__title title-lg">Начни зарабатывать <br> <span>уже сегодня</span> </h1>
           <div class="fscreen__inner">
@@ -75,7 +78,7 @@
       </div>
       <!--end stat-list-->
       <!--begin about-->
-      <div class="about">
+      <div class="about js-about">
         <div class="l">
           <h2 class="title-m title-m--blue about__title"> Немного <span>о нас</span> </h2>
           <div class="about__inner">
@@ -131,15 +134,15 @@
       </div>
       <!--end about-->
       <!--begin plans-->
-      <div class="plans" style="background-image: url('img/plans-bg.png');">
+      <div class="plans js-plans" style="background-image: url('img/plans-bg.png');">
         <div class="l">
-          <h2 class="plans__title title-m title-m--white">Тарифные планы</h2>
+          <h2 class="plans__title title-m title-m--white"><span>Тарифные планы</span></h2>
           <div class="plans__list">
             <div class="plan plan--Bronze">
               <div class="plan__top">
                 <p class="plan__name">Bronze</p>
                 <p class="plan__perc"><span>4.5%</span> <br> в неделю</p>
-                <div class="plan__line"></div>
+                <div class="plan__bg-line" style="background-image: url('img/plan-line.png');"></div>
               </div>
               <div class="plan__bottom">
                 <p class="plan__deposit">Мин. депозит 50 USD</p>
@@ -155,7 +158,7 @@
               <div class="plan__top">
                 <p class="plan__name">Silver</p>
                 <p class="plan__perc"><span>5.75%</span> <br> в неделю</p>
-                <div class="plan__line"></div>
+                <div class="plan__bg-line" style="background-image: url('img/plan-line.png');"></div>
               </div>
               <div class="plan__bottom">
                 <p class="plan__deposit">Мин. депозит 100 USD</p>
@@ -171,7 +174,7 @@
               <div class="plan__top">
                 <p class="plan__name">Gold</p>
                 <p class="plan__perc"><span>6.75%</span> <br> в неделю</p>
-                <div class="plan__line"></div>
+                <div class="plan__bg-line" style="background-image: url('img/plan-line.png');"></div>
               </div>
               <div class="plan__bottom">
                 <p class="plan__deposit">Мин. депозит 300 USD</p>
@@ -187,7 +190,7 @@
               <div class="plan__top">
                 <p class="plan__name">Platinum</p>
                 <p class="plan__perc"><span>8%</span> <br> в неделю</p>
-                <div class="plan__line"></div>
+                <div class="plan__bg-line" style="background-image: url('img/plan-line.png');"></div>
               </div>
               <div class="plan__bottom">
                 <p class="plan__deposit">Мин. депозит 1000 USD</p>
@@ -203,7 +206,7 @@
               <div class="plan__top">
                 <p class="plan__name">Diamond</p>
                 <p class="plan__perc"><span>9.25%</span> <br> в неделю</p>
-                <div class="plan__line"></div>
+                <div class="plan__bg-line" style="background-image: url('img/plan-line.png');"></div>
               </div>
               <div class="plan__bottom">
                 <p class="plan__deposit">Мин. депозит 5000 USD</p>
@@ -226,33 +229,33 @@
       <!--begin earn-->
       <div class="earn">
         <div class="l">
-          <h2 class="title-m title-m--blue">Как мы зарабатываем <span>для Вас деньги</span></h2>
-          <div class="two-col">
+          <h2 class="title-m title-m--blue earn__title">Как мы зарабатываем <span>для Вас деньги</span></h2>
+          <div class="two-col earn__two-col">
             <div class="two-col__left">
               <div class="earn__steps">
                 <div class="step">
                   <div class="step__img"> <svg class="icon icon-earn1"><use xlink:href="img/sprite.svg#icon-earn1"></use></svg> </div>
-                  <p class="step__text">Вы оформляете депозит в личном кабинете</p>
-                  <div class="step__icon"></div>
+                  <p class="step__text">Вы оформляете депозит <br> в личном кабинете</p>
+                  <div class="step__icon">1</div>
                 </div>
-                <div class="step">
+                <div class="step step--right">
                   <div class="step__img"> <svg class="icon icon-earn2"><use xlink:href="img/sprite.svg#icon-earn2"></use></svg> </div>
                   <p class="step__text">Мы принимаем в работу и, распределяя по инструментам, зарабатываем деньги </p>
-                  <div class="step__icon"></div>
+                  <div class="step__icon">2</div>
                 </div>
                 <div class="step">
                   <div class="step__img"> <svg class="icon icon-earn3"><use xlink:href="img/sprite.svg#icon-earn3"></use></svg> </div>
-                  <p class="step__text">Прибыль распределяется между клиентом и компанией </p>
-                  <div class="step__icon"></div>
+                  <p class="step__text">Прибыль распределяется <br> между клиентом <br> и компанией </p>
+                  <div class="step__icon">3</div>
                 </div>
-                <div class="step">
+                <div class="step step--right">
                   <div class="step__img"> <svg class="icon icon-earn4"><use xlink:href="img/sprite.svg#icon-earn4"></use></svg> </div>
-                  <p class="step__text">Вы получаете свой заработок </p>
-                  <div class="step__icon"></div>
+                  <p class="step__text">Вы получаете свой <br> заработок </p>
+                  <div class="step__icon">4</div>
                 </div>
               </div>
             </div>
-            <div class="two-col__right">
+            <div class="two-col__right article">
               <p>В нашей команде специалисты с большим опытом работы в различных сферах и направлениях. </p>
               <p>Управляющие биржевыми инструментами показывают свою продуктивность и профессионализм на протяжении длительного времени. </p>
               <p>Специалисты по анализу криптовалют совершают торговые операции не только по тренду на долгосрочную перспективу, но открывают и короткие позиции, что позволяет обеспечить стабильные и высокие показатели доходности.</p>
@@ -264,10 +267,10 @@
       </div>
       <!--end earn-->
       <!--begin partner-prog-->
-      <div class="pprog">
+      <div class="pprog js-pprog" style="background-image: url('img/partner-bg.png');">
         <div class="l">
-          <h2 class="title-m title-m--white pprog__title">Партнерская программа</h2>
-          <div class="pprog__descr-top">
+          <h2 class="title-m title-m--white pprog__title"><span>Партнерская программа</span></h2>
+          <div class="pprog__descr-top article">
             <p> Наша команда понимает, что однимиз основных инструментов успешного развития компании в любой сфере являются надежные партнеры. Для наших партнёров мы разработали многоуровневую систему партнерской программы, которая является достойным вознаграждением
               за сотрудничество. </p>
             <p> Партнерское вознаграждение выплачивается из прибыли клиента. Тем самым наши партнеры получают вознаграждение на протяжении всего срока действия депозитов и со своей структуры. </p>
@@ -275,38 +278,38 @@
           <h3 class="title-s pprog__sec-title">Вознаграждение по тарифным планам клиентов</h3>
           <!--begin program table-->
           <div class="ptable">
-            <div class="ptable__col ">
-              <div class="ptable__cell"></div>
-              <div class="ptable__cell">С 1-го уровня</div>
-              <div class="ptable__cell">Со 2-го уровня</div>
-              <div class="ptable__cell">С 3-го уровня</div>
+            <div class="ptable__col ptable__col--first">
+              <div class="ptable__cell ptable__cell--name"></div>
+              <div class="ptable__cell ptable__cell--desc">С 1-го уровня</div>
+              <div class="ptable__cell ptable__cell--desc">Со 2-го уровня</div>
+              <div class="ptable__cell ptable__cell--desc">С 3-го уровня</div>
             </div>
             <div class="ptable__col">
-              <div class="ptable__cell">Bronze</div>
+              <div class="ptable__cell ptable__cell--name">Bronze</div>
               <div class="ptable__cell">7%</div>
               <div class="ptable__cell">2%</div>
               <div class="ptable__cell">-</div>
             </div>
             <div class="ptable__col">
-              <div class="ptable__cell">Silver</div>
+              <div class="ptable__cell ptable__cell--name">Silver</div>
               <div class="ptable__cell">8,5%</div>
               <div class="ptable__cell">2,5%</div>
               <div class="ptable__cell">1%</div>
             </div>
             <div class="ptable__col">
-              <div class="ptable__cell">Gold</div>
+              <div class="ptable__cell ptable__cell--name">Gold</div>
               <div class="ptable__cell">11%</div>
               <div class="ptable__cell">3,5%</div>
               <div class="ptable__cell">1,5%</div>
             </div>
             <div class="ptable__col">
-              <div class="ptable__cell">Platinum</div>
+              <div class="ptable__cell ptable__cell--name">Platinum</div>
               <div class="ptable__cell">15%</div>
               <div class="ptable__cell">5%</div>
               <div class="ptable__cell">2%</div>
             </div>
             <div class="ptable__col">
-              <div class="ptable__cell">Diamond</div>
+              <div class="ptable__cell ptable__cell--name">Diamond</div>
               <div class="ptable__cell">18%</div>
               <div class="ptable__cell">7%</div>
               <div class="ptable__cell">3%</div>
@@ -317,16 +320,20 @@
       </div>
       <!--end partner-prog-->
       <!-- begin callback -->
-      <div class="callback">
+      <div class="callback js-callback">
         <div class="l">
-          <div class="two-col">
-            <div class="two-col__Left">
-              <p>Мы всегда будем рады ответить на все вопросы Вы можете написать нам на почту </p> <a class="callback__link" href="mailto:support@eva-group.net">support@eva-group.net</a> <a class="callback__link" href="mailto:info@eva-group.net">info@eva-group.net</a>              <a class="callback__link" href="mailto:partners@eva-group.net">partners@eva-group.net</a>
+          <div class="two-col callback__two-col">
+            <div class="two-col__left">
+              <p>Мы всегда будем рады ответить на все вопросы Вы можете написать нам на почту </p>
+              <div class="callback__inner"> <a class="callback__link" href="mailto:support@eva-group.net">support@eva-group.net</a> <a class="callback__link" href="mailto:info@eva-group.net">info@eva-group.net</a> <a class="callback__link" href="mailto:partners@eva-group.net">partners@eva-group.net</a>                </div>
               <p>С нами можно связаться также по телефону</p> <a class="btn-border" href="#">Заказать звонок</a> </div>
             <div class="two-col__right">
               <p>Если не хотите писать то можете оставить сообщение </p>
               <div class="callback__form">
-                <form> <input class="field" name="name" type="text"> <input class="field" name="email" type="text"> <textarea class="field" name="question"></textarea> <button type="submit">Отправить</button> </form>
+                <form> <input class="field" name="name" type="text" placeholder="Ваше имя"> <input class="field" name="email" type="text" placeholder="Ваш Email"> <textarea class="field field--textarea" name="question" placeholder="Ваш вопрос"></textarea>
+                  <button
+                    class="btn-border btn-border--reverse callback__submit" type="submit">Отправить</button>
+                </form>
               </div>
             </div>
           </div>
@@ -336,7 +343,9 @@
       <!-- begin payment system -->
       <div class="psystem">
         <div class="l">
-          <h2 class="title-m title-m--blue">Поддерживаемые <span>платежные системы</span></h2>
+          <h2 class="title-m title-m--blue psystem__title">
+            <p>Поддерживаемые <span>платежные системы</span></p>
+          </h2>
           <div class="psystem__list">
             <div class="psystem__img"> <img src="img/psystem1.png" alt="alt"> </div>
             <div class="psystem__img"> <img src="img/psystem2.png" alt="alt"> </div>
@@ -359,6 +368,47 @@
           </div>
         </div>
       </footer>
+      <!--begin popup-->
+      <div class="popup js-popup-regisr">
+        <div class="popup__overlay js-popup-overlay">
+          <div class="popup__content js-popup-content">
+            <div class="popup__close js-close"></div>
+            <p class="popup__title">Регистрация</p>
+            <p class="popup__text">Заполните простую заявку <br> чтобы зарегистрироваться на сайте </p>
+            <div class="pform">
+              <form> <input class="pfield" type="text" placeholder="Ваше имя*"> <input class="pfield" type="text" placeholder="Ваш E-mail*"> <button class="psubmit" type="submit">Отправить</button> </form>
+            </div>
+            <p class="popup__requir-text"><span>*</span> - поля обязательные для заполнения </p>
+          </div>
+        </div>
+      </div>
+      <!--end popup-->
+      <!--begin popup-->
+      <div class="popup js-popup-callback">
+        <div class="popup__overlay js-popup-overlay">
+          <div class="popup__content js-popup-content">
+            <div class="popup__close js-close"></div>
+            <p class="popup__title">Заказ обратного звонка</p>
+            <p class="popup__text">Заполните простую заявку <br> чтобы получить обратный звонок </p>
+            <div class="pform">
+              <form> <input class="pfield" type="text" placeholder="Ваше имя"> <input class="pfield" type="text" placeholder="Ваш телефон"> <button class="psubmit" type="submit">Перезвоните мне</button> </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end popup-->
+      <!--begin popup-->
+      <div class="popup js-popup-thanks">
+        <div class="popup__overlay js-popup-overlay">
+          <div class="popup__content js-popup-content">
+            <div class="popup__close js-close"></div>
+            <p class="popup__title">Спасибо</p>
+            <p class="popup__title-sec">Ваши данные получены </p>
+            <p class="popup__text-big">Мы свяжемся с Вами <br> в ближайшее время </p>
+          </div>
+        </div>
+      </div>
+      <!--end popup-->
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->

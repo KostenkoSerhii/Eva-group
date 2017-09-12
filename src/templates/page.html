@@ -5,7 +5,7 @@ title: Eva-group
 
 {% block content %}
 {% include "partials/_header.html" %}
-<div class="fscreen" style="background-image: url('img/fscreen-bg.png');">
+<div class="fscreen js-fscreen">
 	<div class="l">
 		<h1 class="fscreen__title title-lg">Начни зарабатывать <br>
 			<span>уже сегодня</span>
@@ -41,7 +41,7 @@ title: Eva-group
 </div>
 <!--end stat-list-->
 <!--begin about-->
-<div class="about">
+<div class="about js-about">
 	<div class="l">
 		<h2 class="title-m title-m--blue about__title">
 			Немного <span>о нас</span>
@@ -74,9 +74,9 @@ title: Eva-group
 </div>
 <!--end about-->
 <!--begin plans-->
-<div class="plans" style="background-image: url('img/plans-bg.png');">
+<div class="plans js-plans" style="background-image: url('img/plans-bg.png');">
 	<div class="l">
-		<h2 class="plans__title title-m title-m--white">Тарифные планы</h2>
+		<h2 class="plans__title title-m title-m--white"><span>Тарифные планы</span></h2>
 
 		<div class="plans__list">
 			{% import "data/data.html" as tests %}
@@ -85,7 +85,7 @@ title: Eva-group
 				<div class="plan__top">
 					<p class="plan__name">{{test.name}}</p>
 					<p class="plan__perc"><span>{{test.perc}}</span> <br> в неделю</p>
-					<div class="plan__line"></div>
+					<div class="plan__bg-line" style="background-image: url('img/plan-line.png');"></div>
 				</div>
 				<div class="plan__bottom">
 					<p class="plan__deposit">Мин. депозит {{test.deposit}} USD</p>
@@ -124,18 +124,18 @@ title: Eva-group
 <!--begin earn-->
 <div class="earn">
 	<div class="l">
-		<h2 class="title-m title-m--blue">Как мы зарабатываем <span>для Вас деньги</span></h2>
-		<div class="two-col">
+		<h2 class="title-m title-m--blue earn__title">Как мы зарабатываем <span>для Вас деньги</span></h2>
+		<div class="two-col earn__two-col">
 			<div class="two-col__left">
 				<div class="earn__steps">
 					<div class="step">
 						<div class="step__img">
 							{{mixins.icon('earn1')}}
 						</div>
-						<p class="step__text">Вы оформляете депозит в личном кабинете</p>
-						<div class="step__icon"></div>
+						<p class="step__text">Вы оформляете депозит <br> в личном кабинете</p>
+						<div class="step__icon">1</div>
 					</div>
-					<div class="step">
+					<div class="step step--right">
 						<div class="step__img">
 							{{mixins.icon('earn2')}}
 						</div>
@@ -143,30 +143,30 @@ title: Eva-group
 							распределяя по инструментам,
 							зарабатываем деньги
 						</p>
-						<div class="step__icon"></div>
+						<div class="step__icon">2</div>
 					</div>
 					<div class="step">
 						<div class="step__img">
 							{{mixins.icon('earn3')}}
 						</div>
-						<p class="step__text">Прибыль распределяется
-							между клиентом
+						<p class="step__text">Прибыль распределяется <br>
+							между клиентом <br>
 							и компанией
 						</p>
-						<div class="step__icon"></div>
+						<div class="step__icon">3</div>
 					</div>
-					<div class="step">
+					<div class="step step--right">
 						<div class="step__img">
 							{{mixins.icon('earn4')}}
 						</div>
-						<p class="step__text">Вы получаете свой
+						<p class="step__text">Вы получаете свой <br>
 							заработок
 						</p>
-						<div class="step__icon"></div>
+						<div class="step__icon">4</div>
 					</div>
 				</div>
 			</div>
-			<div class="two-col__right">
+			<div class="two-col__right article">
 				<p>В нашей команде специалисты с большим опытом работы в различных сферах и направлениях. 
 				</p>
 				<p>Управляющие биржевыми инструментами показывают свою продуктивность и профессионализм на протяжении длительного времени. </p>
@@ -180,10 +180,10 @@ title: Eva-group
 <!--end earn-->
 
 <!--begin partner-prog-->
-<div class="pprog">
+<div class="pprog js-pprog" style="background-image: url('img/partner-bg.png');">
 	<div class="l">
-		<h2 class="title-m title-m--white pprog__title">Партнерская программа</h2>
-		<div class="pprog__descr-top">
+		<h2 class="title-m title-m--white pprog__title"><span>Партнерская программа</span></h2>
+		<div class="pprog__descr-top article">
 			<p>
 				Наша команда понимает, что однимиз основных инструментов успешного развития компании в любой сфере являются надежные партнеры. Для наших партнёров мы разработали многоуровневую систему партнерской программы, которая является достойным вознаграждением за сотрудничество.
 			</p>
@@ -194,38 +194,38 @@ title: Eva-group
 		<h3 class="title-s pprog__sec-title">Вознаграждение по тарифным планам клиентов</h3>
 		<!--begin program table-->
 		<div class="ptable">
-			<div class="ptable__col ">
-				<div class="ptable__cell"></div>
-				<div class="ptable__cell">С 1-го уровня</div>
-				<div class="ptable__cell">Со 2-го уровня</div>
-				<div class="ptable__cell">С 3-го уровня</div>
+			<div class="ptable__col ptable__col--first">
+				<div class="ptable__cell ptable__cell--name"></div>
+				<div class="ptable__cell ptable__cell--desc">С 1-го уровня</div>
+				<div class="ptable__cell ptable__cell--desc">Со 2-го уровня</div>
+				<div class="ptable__cell ptable__cell--desc">С 3-го уровня</div>
 			</div>
 			<div class="ptable__col">
-				<div class="ptable__cell">Bronze</div>
+				<div class="ptable__cell ptable__cell--name">Bronze</div>
 				<div class="ptable__cell">7%</div>
 				<div class="ptable__cell">2%</div>
 				<div class="ptable__cell">-</div>
 			</div>
 			<div class="ptable__col">
-				<div class="ptable__cell">Silver</div>
+				<div class="ptable__cell ptable__cell--name">Silver</div>
 				<div class="ptable__cell">8,5%</div>
 				<div class="ptable__cell">2,5%</div>
 				<div class="ptable__cell">1%</div>
 			</div>
 			<div class="ptable__col">
-				<div class="ptable__cell">Gold</div>
+				<div class="ptable__cell ptable__cell--name">Gold</div>
 				<div class="ptable__cell">11%</div>
 				<div class="ptable__cell">3,5%</div>
 				<div class="ptable__cell">1,5%</div>
 			</div>
 			<div class="ptable__col">
-				<div class="ptable__cell">Platinum</div>
+				<div class="ptable__cell ptable__cell--name">Platinum</div>
 				<div class="ptable__cell">15%</div>
 				<div class="ptable__cell">5%</div>
 				<div class="ptable__cell">2%</div>
 			</div>
 			<div class="ptable__col">
-				<div class="ptable__cell">Diamond</div>
+				<div class="ptable__cell ptable__cell--name">Diamond</div>
 				<div class="ptable__cell">18%</div>
 				<div class="ptable__cell">7%</div>
 				<div class="ptable__cell">3%</div>
@@ -240,16 +240,18 @@ title: Eva-group
 </div>
 <!--end partner-prog-->
 <!-- begin callback -->
-<div class="callback">
+<div class="callback js-callback">
 	<div class="l">
-		<div class="two-col">
-			<div class="two-col__Left">
+		<div class="two-col callback__two-col">
+			<div class="two-col__left">
 				<p>Мы всегда будем рады ответить на все вопросы
 					Вы можете написать нам на почту
 				</p>
-				<a class="callback__link" href="mailto:support@eva-group.net">support@eva-group.net</a>
-				<a class="callback__link" href="mailto:info@eva-group.net">info@eva-group.net</a>
-				<a class="callback__link" href="mailto:partners@eva-group.net">partners@eva-group.net</a>
+				<div class="callback__inner">
+					<a class="callback__link" href="mailto:support@eva-group.net">support@eva-group.net</a>
+					<a class="callback__link" href="mailto:info@eva-group.net">info@eva-group.net</a>
+					<a class="callback__link" href="mailto:partners@eva-group.net">partners@eva-group.net</a>
+				</div>
 				<p>С нами можно связаться также по телефону</p>
 				<a class="btn-border" href="#">Заказать звонок</a>
 			</div>
@@ -259,10 +261,10 @@ title: Eva-group
 				</p>
 				<div class="callback__form">
 					<form >
-						<input class="field" name="name" type="text">
-						<input class="field" name="email" type="text">
-						<textarea class="field" name="question"></textarea>
-						<button type="submit">Отправить</button>
+						<input class="field" name="name" type="text" placeholder="Ваше имя">
+						<input class="field" name="email" type="text" placeholder="Ваш Email">
+						<textarea class="field field--textarea" name="question" placeholder="Ваш вопрос"></textarea>
+						<button class="btn-border btn-border--reverse callback__submit" type="submit">Отправить</button>
 					</form>
 				</div>
 			</div>
@@ -273,7 +275,7 @@ title: Eva-group
 <!-- begin payment system -->
 <div class="psystem">
 	<div class="l">
-		<h2 class="title-m title-m--blue">Поддерживаемые <span>платежные системы</span></h2>
+		<h2 class="title-m title-m--blue psystem__title"><p>Поддерживаемые <span>платежные системы</span></p></h2>
 		<div class="psystem__list">
 			<div class="psystem__img">
 				<img src="img/psystem1.png" alt="alt">
@@ -298,5 +300,5 @@ title: Eva-group
 </div>
 <!-- end payment system -->
 {% include "partials/_footer.html" %}
-
+{% include "partials/_popups.html" %}
 {% endblock %}

@@ -21,6 +21,7 @@ $orange2: #f59102
 $orange3: #f56902
 $blue: #0177c2
 $blue-d: #0c2438
+$bg-blue: #e4eff7
 $black: #000
 
 =rob
@@ -41,27 +42,57 @@ a
 	font-weight: 700
 	color: $white
 	+rob
+	+m
+		font-size: 40px
+	+xs
+		font-size: 24px
 	span
 		color: $orange
 .title-m
 	font-size: 36px
 	font-weight: 700
 	position: relative
-	&:before
-		content: ''
-		position: absolute
-		left: 0
-		bottom: -3px
-		width: 20px
-		height: 2px
+	letter-spacing: -0.7px
+	+m
+		font-size: 28px
+	+xs
+		font-size: 20px
 	&--white
 		color: $white
-		&:before
-			background: $white
+		// &:before
+		// 	background: $white
+		span
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				bottom: -3px
+				width: 20px
+				height: 2px
+				background: $white
 	&--blue
 		color: $blue
 		&:before
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -3px
+			width: 20px
+			height: 2px
 			background: $blue
+		p
+			position: relative
+			display: inline-block
+			vertical-align: top
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				bottom: -3px
+				width: 20px
+				height: 2px
+				background: $blue
 		span
 			color: $black
 .title-s
@@ -70,267 +101,74 @@ a
 	font-weight: 700
 	font-size: 24px
 	color: $white
+	+m
+		font-size: 20px
+	+xs
+		font-size: 16px
 .article
 	p
 		margin-bottom: 20px
 		&:last-of-type
 			margin-bottom: 0
-.header
-	background: $blue
-	position: fixed
-	left: 0
-	top: 0
-	width: 100%
-	padding-top: 15px
-	padding-bottom: 21px
-	z-index: 10
-	&__inner
-		+clr
-		position: relative
-	&__logo
-		float: left
-		a
-			display: block
-	&__menu
-		position: absolute
-		left: 50%	
-		transform: translateX(-50%)
-		top: 15px
-		a
-			color: $white
-			+rob
-			margin-right: 34px
-			position: relative
-			&:last-of-type
-				margin-right: 0
-			&:before, &:after
-				content: ''
-				position: absolute
-				+trans
-			&:before
-				top: -5px
-				left: -5px
-				bottom: -5px
-				right: -5px
-			&:after
-				bottom: -10px
-				width: 120%
-				left: -10%
-				height: 1px
-				background: $white
-				opacity: 0
-			&.active
-				&:after
-					opacity: 1
-	&__user
-		float: right
-		margin-top: 15px
-		a
-			+rob
-			color: $white
-		.vk
-			display: inline-block
-			vertical-align: top
-			margin-left: 24px
-			width: 34px
-			height: 34px
-			border: 1px solid $white
-			background-repeat: no-repeat
-			background-position: 50% 50%
-			position: relative
-			top: -7px
-		span
-			display: inline-block
-			vertical-align: top
-			color: $white
-			margin: 0 5px
-.fscreen
-	margin-top: 75px
-	background-repeat: no-repeat
-	background-position: 50% 0
-	padding-top: 60px
-	text-align: center
-	padding-bottom: 122px
-	z-index: 1
-	position: relative
-	&__inner
-		font-size: 0
-	&__title
-		margin-bottom: 50px
-.hexagon
-	width: 326px
-	height: 291px
-	display: inline-block
-	vertical-align: top
-	margin: 0 9px
-	padding: 30px 65px 0
-	&__img
-		margin: 0 auto
-		position: relative
-		margin-bottom: 45px
-		svg
-			fill: $white
-			font-size: 68px
-		&:after
-			content: ''
-			position: absolute
-			left: 50%
-			transform: translateX(-50%)
-			width: 30px
-			height: 2px
-			background: $orange
-			bottom: -20px
-	&__main-text, &__sec-text
-		+rob
-		font-size: 28px
-		color: $white
-		font-weight: 700
-	&__sec-text
-		font-weight: 300
-.stat-list
-	background: $blue
-	position: relative
-	top: -56px
-	padding-top: 60px
-	&__inner
-		font-size: 0
-		text-align: center
-.stat-block
-	display: inline-block
-	vertical-align: top
-	max-width: 200px
-	margin-bottom: 30px
-	color: $white
-	margin-right: 95px
-	&:last-of-type
-		margin-right: 0
-	&__main-text
-		font-size: 60px
-		font-weight: 700
-		+rob
-		span
-			font-size: 48px
-			font-weight: 400
-			position: relative
-			top: -3px
-	&__sec-text
-		font-size: 24px
-		font-weight: 400
-		+play
-.about
-	padding-bottom: 50px
-	&__inner
-		+clr
+.two-col
+	+clr
 	&__left
 		float: left
-		max-width: 650px
+		width: 50%
 	&__right
 		float: right
-		max-width: 375px
-		padding-right: 50px
-	&__title
-		margin-bottom: 40px
-	&__item
-		margin-bottom: 25px
-		position: relative
-		padding-left: 50px
-		span
-			color: $blue
-			font-size: 18px
-			font-weight: 700
-	&__icon
-		position: absolute
-		margin-right: 15px
-		left: 0
-		top: 50%
-		transform: translateY(-50%)
-		svg
-			fill: $orange
-			font-size: 31px
-.plans
-	background-repeat: no-repeat
-	background-position: 50% 0
-	padding-top: 30px
-	padding-bottom: 50px
-	&__title
-		text-align: center
-		margin-bottom: 50px
-	&__list
-		display: flex
-		justify-content: space-between
-		margin-bottom: 10px
-	&__descr
-		color: $white
-		margin-bottom: 30px
-.plan
-	flex-basis: 18%
-	&--Bronze
-		.plan__top
-			background: url('../img/plan1.png') 50% 0 no-repeat
-		&:hover
-			.plan__top
-				background: url('../img/plan1-hover.png') 50% 0 no-repeat
-	&--Silver
-		.plan__top
-			background: url('../img/plan2.png') 50% 0 no-repeat
-		&:hover
-			.plan__top
-				background: url('../img/plan2-hover.png') 50% 0 no-repeat
-	&--Gold
-		.plan__top
-			background: url('../img/plan3.png') 50% 0 no-repeat
-		&:hover
-			.plan__top
-				background: url('../img/plan3-hover.png') 50% 0 no-repeat
-	&--Platinum
-		.plan__top
-			background: url('../img/plan4.png') 50% 0 no-repeat
-		&:hover
-			.plan__top
-				background: url('../img/plan4-hover.png') 50% 0 no-repeat
-	&--Diamond
-		.plan__top
-			background: url('../img/plan5.png') 50% 0 no-repeat
-		&:hover
-			.plan__top
-				background: url('../img/plan5-hover.png') 50% 0 no-repeat
+		width: 50%
+.btn
+	padding: 20px 60px
+	display: block
+	margin: 0 auto
+	background: $orange3
+	max-width: 380px
+	color: $white
+	border: 1px solid $orange3
+	box-sizing: border-box
+	+trans
+	font-size: 24px
+	line-height: 1
+	font-weight: 700
 	&:hover
-		.plan__bottom
-			background: $orange
-	&__top
-		text-align: center
-		padding-bottom: 40px
-		+rob
-		position: relative
-		z-index: 1
-	&__name
-		font-size: 36px
-		font-weight: 700
-		color: $blue
-		margin-bottom: 10px
-	&__perc
-		+play
-		font-size: 18px
+		background: transparent
+		color: $orange3
+.btn-border
+	width: 227px
+	padding: 14px 27px
+	background: $white
+	border: 2px solid $orange3
+	color: $orange3
+	+trans
+	font-weight: 700
+	font-size: 20px
+	text-align: center
+	margin: 0 auto
+	display: block
+	&:hover
 		color: $white
-		span
-			+rob
-			font-size: 36px
-			font-weight: 700
-	&__bottom
-		+trans
-		background: $blue
-		position: relative
-		top: -30px
-		+play
+		background: $orange3
+	&--reverse
+		background: $orange3
 		color: $white
-		padding: 30px 14px 20px
-	&__deposit
-		margin-bottom: 23px
-	&__line
-		margin-bottom: 20px
-		font-size: 0
-		span
-			font-size: 16px
-			display: inline-block
-			vertical-align: top
-			width: 50%
+		&:hover
+			color: $orange3
+			background: transparent
+.field
+	resize: none
+	border: 1px solid $blue
+	background: none
+	display: block
+	width: 100%
+	margin-bottom: 20px
+	padding: 15px 35px
+	color: $black
+	font-size: 18px
+	line-height: 1
+	+play
+	&--textarea
+		height: 90px
+		margin-bottom: 32px
+.is-hidden
+	overflow: hidden
