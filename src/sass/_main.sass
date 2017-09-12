@@ -291,11 +291,15 @@
 			fill: $orange
 			font-size: 31px
 .plans
+	background-image: url('../img/plans-bg.png')
 	background-repeat: no-repeat
 	background-position: 50% 0
 	padding-top: 30px
 	padding-bottom: 70px
 	background-size: cover
+	+m
+		background-image: url('../img/plans-bg-mob.jpg')
+		padding-bottom: 30px
 	&__title
 		text-align: center
 		margin-bottom: 50px
@@ -308,6 +312,8 @@
 			text-align: center
 	&__descr
 		color: $white
+		margin-bottom: 30px
+	&__btn
 		margin-bottom: 30px
 .plan
 	flex-basis: 18%
@@ -394,14 +400,24 @@
 .earn
 	margin-top: 45px
 	margin-bottom: 80px
+	+m
+		margin: 30px auto
 	&__title
 		margin-bottom: 45px
 	.two-col__left
 		padding-right: 15px
 		width: 585px
+		+m
+			margin: 0 auto 30px
+		+xs
+			width: 100%
+
 	.two-col__right
 		padding-left: 15px
 		width: calc(100% - 585px)
+		+m
+			width: 100%
+			padding-left: 0
 	&__steps
 .step
 	min-height: 117px
@@ -410,15 +426,27 @@
 	// padding-left: 50px
 	position: relative
 	width: 310px
+	+xs
+		width: 100%
+		padding-right: 0
+		min-height: auto
+		margin-bottom: 20px
 	&:last-of-type
 		margin-bottom: 0
 		.step__icon
 			&:after
 				display: none
+	&:hover
+		svg
+			fill: $orange
+		.step__icon
+			color: $blue
 	&--right
 		margin-left: auto
 		padding-right: 0
 		padding-left: 70px
+		+xs
+			padding-left: 0
 		.step__icon
 			right: auto
 			left: 0
@@ -432,9 +460,14 @@
 	&__img
 		margin-bottom: 5px
 		margin-left: 55px
+	&__text
+		+xs
+			br
+				display: none
 	svg
 		fill: $blue
 		font-size: 51px
+		+trans
 	p
 		text-align: left
 	&__icon
@@ -448,6 +481,9 @@
 		color: $orange
 		padding-top: 10px
 		text-align: center
+		+trans
+		+xs
+			display: none
 		&:after
 			content: ''
 			position: absolute
@@ -464,6 +500,8 @@
 		top: 70px
 		transform: translateY(-50%)
 		right: 0
+		+xs
+			display: none
 	&:before
 		width: 6px
 		height: 6px
@@ -474,25 +512,37 @@
 		width: 36px
 		right: 66px
 .pprog
+	background-image: url('../img/partner-bg.png')
 	background-repeat: no-repeat
 	background-position: 50% 0
 	background-size: cover
 	padding-top: 45px
 	padding-bottom: 92px
-
+	+m
+		background-image: url('../img/partner-bg-mob.jpg')
+		padding-bottom: 40px
+	&__inner
+		+m
+			overflow-x: scroll
 	&__title
 		text-align: center
 		margin-bottom: 20px
 	&__descr-top, &__descr-bottom
 		max-width: 849px
 		margin: 0 auto
+		+m
+			max-width: 100%
 	&__descr-top
-		
 		position: relative
 		
 		padding: 23px 5px 23px 50px
 		background: rgba(13, 30, 46, 0.62)
 		margin-bottom: 42px
+		+m
+			padding: 23px 5px 23px 23px
+		+xs
+			background: none
+			padding: 0
 		p
 			color: $white
 	&__sec-title
@@ -503,15 +553,19 @@
 		margin-bottom: 35px
 .ptable
 	background: rgba(7, 108, 172, 0.62)
-	max-width: 849px
+	width: 849px
 	margin: 0 auto 28px
 	font-size: 0
 	padding: 0 25px 20px
+	+m
+		width: 525px
 	&__col
 		display: inline-block
 		width: 138px
 		vertical-align: top
 		margin-left: -1px
+		+m
+			width: 80px
 		+trans
 		&:not(.ptable__col--first)
 			&:hover
@@ -520,6 +574,8 @@
 					color: $white
 		&--first
 			width: 102px
+			+m
+				width: 80px
 			.ptable__cell--name
 				text-align: left
 	&__cell
@@ -530,6 +586,8 @@
 		text-align: center
 		position: relative
 		border-bottom: 1px solid $white
+		+m
+			min-height: 60px
 		&:not(.ptable__cell--name, .ptable__cell--desc )
 			&:before
 				content: ''
@@ -548,13 +606,23 @@
 			font-weight: 700
 			color: $orange
 			+trans
+			+m
+				padding: 10px 0	
+				min-height: 42px
+				font-size: 18px
 		&:not(.ptable__cell--name, .ptable__cell--desc )
 			padding-top: 28px
+			+m
+				padding-top: 20px
 		&.ptable__cell--desc
 			padding-top: 14px
+			+m
+				padding-top: 10px
 .callback
 	padding-top: 40px
 	padding-bottom: 68px
+	+m
+		padding-bottom: 30px
 	&__two-col
 		max-width: 950px
 		margin: 0 auto
@@ -563,13 +631,22 @@
 		font-size: 20px
 		letter-spacing: -0.5px
 		margin-bottom: 28px
+		+m
+			font-size: 16px
+			margin-bottom: 10px
 	.two-col__left
 		padding-right: 90px
-
+		+m
+			padding: 0
+			margin-bottom: 20px
 	.two-col__right
 		padding-left: 90px
+		+m
+			padding: 0
 	&__inner
 		margin-bottom: 45px
+		+m
+			margin-bottom: 0
 	&__link
 		display: block
 		+trans
@@ -578,6 +655,8 @@
 		font-size: 18px
 		line-height: 1
 		margin-bottom: 10px
+		+m
+			padding: 10px 20px
 		&:hover
 			background: $orange2
 			color: $white
@@ -596,101 +675,38 @@
 		display: inline-block
 		vertical-align: top
 		margin: 0 25px
+		img
+			height: 60px
+			width: auto
+			+xs
+				height: 40px
+		+m
+			margin: 0 25px 20px
 .footer
 	background: $blue-d
 	padding: 18px 0
 	color: $white
 	font-size: 18px
 	line-height: 1
+	+xs
+		text-align: center
 	&__inner
 		+clr
 		position: relative
 	&__logo
 		float: left
+		+xs
+			float: none
+			margin-bottom: 10px
 	&__right
 		float: right
 		margin-top: 15px
+		+xs
+			float: none
 	&__center
 		+vcenter
-.popup
-	position: fixed
-	z-index: 15
-	top: 0
-	left: 0
-	width: 100vw
-	height: 100vh
-	display: none
-	&__overlay
-		height: 100%
-		background: rgba(#000, 0.5)
-	&__content
-		padding: 30px 60px 45px
-		+vcenter
-		width: 499px
-		// height: 438px
-		background-color: $white
-		border: 1px solid $blue
-		text-align: center
-	&__title
-		font-size: 30px
-		font-weight: 700
-		color: $blue
-		margin-bottom: 15px
-	&__title-sec
-		font-size: 24px
-		color: $blue
-		margin-bottom: 30px
-	&__text-big
-		font-size: 24px
-		font-weight: 700
-	&__text
-		+rob
-		font-size: 18px
-		font-weight: 400
-		color: $black
-		margin-bottom: 30px
-	&__requir-text
-		margin-top: 25px
-		span
-			color: #fb1a03
-	&__close
-		position: absolute
-		width: 62px
-		height: 62px
-		background: $blue
-		top: 0
-		right: -80px
-		cursor: pointer
-		+trans
-		&:before
-			content: ''
-			+vcenter
-			+s(close)
-		&:hover
-			background: $orange3
-.pfield
-	display: block
-	width: 100%
-	height: 48px
-	line-height: 48px
-	background-color: $white
-	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.75)
-	margin-bottom: 28px
-	padding: 0 15px
-	+rob
-	font-size: 18px
-.psubmit
-	margin-top: 8px
-	display: inline-block
-	vertical-align: top
-	width: 250px
-	height: 44px
-	background: $orange3
-	line-height: 44px
-	+trans
-	font-size: 24px
-	color: $white
-	border: 1px solid $orange3
-	&:hover
-		color: $orange3
-		background: transparent
+		+xs
+			position: relative
+			top: 0
+			left: 0
+			transform: translate(0, 0)

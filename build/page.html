@@ -25,7 +25,8 @@
             <div class="header__drop-mob js-drop-mob">
               <div class="header__menu"> <a class="js-scroll active" data-scroll="js-fscreen" class="active" href="#">Главная</a> <a class="js-scroll" data-scroll="js-about" href="#">О компании</a> <a class="js-scroll" data-scroll="js-plans" href="#">Инвесторам</a> <a class="js-scroll"
                   data-scroll="js-pprog" href="#">Партнерам</a> <a class="js-scroll" data-scroll="js-callback" href="#">Обратная связь</a> </div>
-              <div class="header__user"> <a class="login" href="#">Вход    </a> <span>/</span> <a class="registration" href="#">   Регистрация</a> <a class="vk" href="#" style="background-image: url('img/vk.png');"></a> </div>
+              <div class="header__user"> <a class="login js-popup-link" data-popup-open="js-popup-login" href="#">Вход    </a> <span>/</span> <a class="registration " href="https://eva-group.net/sign-up">   Регистрация</a> <a class="vk " href="https://vk.com/public151978822" target="_blank"
+                  style="background-image: url('img/vk.png');"></a> </div>
             </div>
           </div>
         </div>
@@ -35,21 +36,24 @@
         <div class="l">
           <h1 class="fscreen__title title-lg">Начни зарабатывать <br> <span>уже сегодня</span> </h1>
           <div class="fscreen__inner">
-            <div class="hexagon" style="background-image: url('img/hexagon-bg.png');">
+            <a class="hexagon js-scroll " data-scroll='js-pprog' href='#' style="background-image: url('img/hexagon-bg.png');">
               <div class="hexagon__img"> <svg class="icon icon-hexagon1"><use xlink:href="img/sprite.svg#icon-hexagon1"></use></svg> </div>
               <p class="hexagon__main-text">До 28% прибыли</p>
               <p class="hexagon__sec-text">со своей структуры</p>
-            </div>
-            <div class="hexagon" style="background-image: url('img/hexagon-bg.png');">
+              <div class="hexagon__hover"></div>
+            </a>
+            <a class="hexagon js-scroll " data-scroll='js-plans' href='#' style="background-image: url('img/hexagon-bg.png');">
               <div class="hexagon__img"> <svg class="icon icon-hexagon2"><use xlink:href="img/sprite.svg#icon-hexagon2"></use></svg> </div>
               <p class="hexagon__main-text">До 37% в месяц</p>
               <p class="hexagon__sec-text">с еженедельной выплатой</p>
-            </div>
-            <div class="hexagon" style="background-image: url('img/hexagon-bg.png');">
+              <div class="hexagon__hover"></div>
+            </a>
+            <a class="hexagon " data-scroll='' href='https://eva-group.net/sign-up ' style="background-image: url('img/hexagon-bg.png');">
               <div class="hexagon__img"> <svg class="icon icon-hexagon3"><use xlink:href="img/sprite.svg#icon-hexagon3"></use></svg> </div>
               <p class="hexagon__main-text">До 10% на счет</p>
               <p class="hexagon__sec-text">в течении 24 часов</p>
-            </div>
+              <div class="hexagon__hover"></div>
+            </a>
           </div>
         </div>
       </div>
@@ -57,19 +61,19 @@
       <div class="stat-list">
         <div class="l">
           <div class="stat-list__inner">
-            <div class="stat-block">
+            <div class="stat-block" data-aos-once="true" data-aos="slide-up" data-aos-delay="50">
               <p class="stat-block__main-text">1000<span>+</span></p>
               <p class="stat-block__sec-text">довольных клиентов</p>
             </div>
-            <div class="stat-block">
+            <div class="stat-block" data-aos-once="true" data-aos="slide-up" data-aos-delay="100">
               <p class="stat-block__main-text">8<span>+</span></p>
               <p class="stat-block__sec-text">опыта в сфере инвестирования</p>
             </div>
-            <div class="stat-block">
+            <div class="stat-block" data-aos-once="true" data-aos="slide-up" data-aos-delay="150">
               <p class="stat-block__main-text">50<span>+</span></p>
               <p class="stat-block__sec-text">партнеров по всему миру</p>
             </div>
-            <div class="stat-block">
+            <div class="stat-block" data-aos-once="true" data-aos="slide-up" data-aos-delay="200">
               <p class="stat-block__main-text">30<span>+</span></p>
               <p class="stat-block__sec-text">новых клиентов ежедневно</p>
             </div>
@@ -134,7 +138,7 @@
       </div>
       <!--end about-->
       <!--begin plans-->
-      <div class="plans js-plans" style="background-image: url('img/plans-bg.png');">
+      <div class="plans js-plans">
         <div class="l">
           <h2 class="plans__title title-m title-m--white"><span>Тарифные планы</span></h2>
           <div class="plans__list">
@@ -222,8 +226,7 @@
           <div class="plans__descr">
             <p>* Начисление и вывод прибыли по депозиту происходит один раз в неделю по субботам. </p>
             <p> ** Указана чистая прибыль клиента БЕЗ возврата тела депозита. Тело возвращается равными частями (по 3.85% в неделю) </p>
-          </div>
-        </div>
+          </div> <a class="btn  js-popup-link plans__btn" href="#" data-popup-open="js-popup-reg">Зарегистрироваться</a> </div>
       </div>
       <!--end plans-->
       <!--begin earn-->
@@ -267,7 +270,7 @@
       </div>
       <!--end earn-->
       <!--begin partner-prog-->
-      <div class="pprog js-pprog" style="background-image: url('img/partner-bg.png');">
+      <div class="pprog js-pprog">
         <div class="l">
           <h2 class="title-m title-m--white pprog__title"><span>Партнерская программа</span></h2>
           <div class="pprog__descr-top article">
@@ -276,47 +279,52 @@
             <p> Партнерское вознаграждение выплачивается из прибыли клиента. Тем самым наши партнеры получают вознаграждение на протяжении всего срока действия депозитов и со своей структуры. </p>
           </div>
           <h3 class="title-s pprog__sec-title">Вознаграждение по тарифным планам клиентов</h3>
-          <!--begin program table-->
-          <div class="ptable">
-            <div class="ptable__col ptable__col--first">
-              <div class="ptable__cell ptable__cell--name"></div>
-              <div class="ptable__cell ptable__cell--desc">С 1-го уровня</div>
-              <div class="ptable__cell ptable__cell--desc">Со 2-го уровня</div>
-              <div class="ptable__cell ptable__cell--desc">С 3-го уровня</div>
+          <!-- begin pprog__inner -->
+          <div class="pprog__inner">
+            <!--begin program table-->
+            <div class="ptable">
+              <div class="ptable__col ptable__col--first">
+                <div class="ptable__cell ptable__cell--name"></div>
+                <div class="ptable__cell ptable__cell--desc">С 1-го уровня</div>
+                <div class="ptable__cell ptable__cell--desc">Со 2-го уровня</div>
+                <div class="ptable__cell ptable__cell--desc">С 3-го уровня</div>
+              </div>
+              <div class="ptable__col">
+                <div class="ptable__cell ptable__cell--name">Bronze</div>
+                <div class="ptable__cell">7%</div>
+                <div class="ptable__cell">2%</div>
+                <div class="ptable__cell">-</div>
+              </div>
+              <div class="ptable__col">
+                <div class="ptable__cell ptable__cell--name">Silver</div>
+                <div class="ptable__cell">8,5%</div>
+                <div class="ptable__cell">2,5%</div>
+                <div class="ptable__cell">1%</div>
+              </div>
+              <div class="ptable__col">
+                <div class="ptable__cell ptable__cell--name">Gold</div>
+                <div class="ptable__cell">11%</div>
+                <div class="ptable__cell">3,5%</div>
+                <div class="ptable__cell">1,5%</div>
+              </div>
+              <div class="ptable__col">
+                <div class="ptable__cell ptable__cell--name">Platinum</div>
+                <div class="ptable__cell">15%</div>
+                <div class="ptable__cell">5%</div>
+                <div class="ptable__cell">2%</div>
+              </div>
+              <div class="ptable__col">
+                <div class="ptable__cell ptable__cell--name">Diamond</div>
+                <div class="ptable__cell">18%</div>
+                <div class="ptable__cell">7%</div>
+                <div class="ptable__cell">3%</div>
+              </div>
             </div>
-            <div class="ptable__col">
-              <div class="ptable__cell ptable__cell--name">Bronze</div>
-              <div class="ptable__cell">7%</div>
-              <div class="ptable__cell">2%</div>
-              <div class="ptable__cell">-</div>
-            </div>
-            <div class="ptable__col">
-              <div class="ptable__cell ptable__cell--name">Silver</div>
-              <div class="ptable__cell">8,5%</div>
-              <div class="ptable__cell">2,5%</div>
-              <div class="ptable__cell">1%</div>
-            </div>
-            <div class="ptable__col">
-              <div class="ptable__cell ptable__cell--name">Gold</div>
-              <div class="ptable__cell">11%</div>
-              <div class="ptable__cell">3,5%</div>
-              <div class="ptable__cell">1,5%</div>
-            </div>
-            <div class="ptable__col">
-              <div class="ptable__cell ptable__cell--name">Platinum</div>
-              <div class="ptable__cell">15%</div>
-              <div class="ptable__cell">5%</div>
-              <div class="ptable__cell">2%</div>
-            </div>
-            <div class="ptable__col">
-              <div class="ptable__cell ptable__cell--name">Diamond</div>
-              <div class="ptable__cell">18%</div>
-              <div class="ptable__cell">7%</div>
-              <div class="ptable__cell">3%</div>
-            </div>
+            <!--end program table-->
           </div>
-          <!--end program table-->
-          <p class="pprog__descr-bottom"> * Вознаграждение рассчитывается от чистой прибыли клиента, без учета взврта тела депозита. Начисление и выплата вознаграждения происходит еженедельно при начислении прибыликлиентам. Вывод доступен в любой момент. </p> <a href="#" class="btn pprog__btn-reg">Зарегистрироваться</a>          </div>
+          <!-- end pprog__inner -->
+          <p class="pprog__descr-bottom"> * Вознаграждение рассчитывается от чистой прибыли клиента, без учета взврта тела депозита. Начисление и выплата вознаграждения происходит еженедельно при начислении прибыликлиентам. Вывод доступен в любой момент. </p> <a href="#" data-popup-open="js-popup-reg"
+            class="btn pprog__btn-reg js-popup-link">Зарегистрироваться</a> </div>
       </div>
       <!--end partner-prog-->
       <!-- begin callback -->
@@ -326,7 +334,7 @@
             <div class="two-col__left">
               <p>Мы всегда будем рады ответить на все вопросы Вы можете написать нам на почту </p>
               <div class="callback__inner"> <a class="callback__link" href="mailto:support@eva-group.net">support@eva-group.net</a> <a class="callback__link" href="mailto:info@eva-group.net">info@eva-group.net</a> <a class="callback__link" href="mailto:partners@eva-group.net">partners@eva-group.net</a>                </div>
-              <p>С нами можно связаться также по телефону</p> <a class="btn-border" href="#">Заказать звонок</a> </div>
+              <p>С нами можно связаться также по телефону</p> <a class="btn-border js-popup-link" data-popup-open="js-popup-callback" href="#">Заказать звонок</a> </div>
             <div class="two-col__right">
               <p>Если не хотите писать то можете оставить сообщение </p>
               <div class="callback__form">
@@ -369,43 +377,56 @@
         </div>
       </footer>
       <!--begin popup-->
-      <div class="popup js-popup-regisr">
-        <div class="popup__overlay js-popup-overlay">
-          <div class="popup__content js-popup-content">
-            <div class="popup__close js-close"></div>
-            <p class="popup__title">Регистрация</p>
-            <p class="popup__text">Заполните простую заявку <br> чтобы зарегистрироваться на сайте </p>
-            <div class="pform">
-              <form> <input class="pfield" type="text" placeholder="Ваше имя*"> <input class="pfield" type="text" placeholder="Ваш E-mail*"> <button class="psubmit" type="submit">Отправить</button> </form>
-            </div>
-            <p class="popup__requir-text"><span>*</span> - поля обязательные для заполнения </p>
+      <div class="popup js-popup js-popup-login">
+        <div class="popup__overlay js-popup-overlay"> </div>
+        <div class="popup__content js-popup-content">
+          <div class="popup__close js-close-popup"></div>
+          <p class="popup__title">Вход</p>
+          <p class="popup__text">Заполните форму входа </p>
+          <div class="pform">
+            <form class="js-reg-form"> <input class="pfield" required type="text" placeholder="Ваше имя*"> <input class="pfield" required type="text" placeholder="Ваш E-mail*"> <button class="psubmit" type="submit">Войти</button> </form>
+          </div> <a class="rememb js-popup-link" data-popup-open="js-popup-rememb" href="#">Забыли пароль?</a> <a class="preg" href="https://eva-group.net/sign-up">   Регистрация</a>
+          <!-- 		<p class="popup__requir-text"><span>*</span> - поля обязательные для заполнения
+</p> -->
+        </div>
+      </div>
+      <!--end popup-->
+      <!--begin popup-->
+      <div class="popup js-popup js-popup-rememb">
+        <div class="popup__overlay js-popup-overlay"> </div>
+        <div class="popup__content js-popup-content">
+          <div class="popup__close js-close-popup"></div>
+          <p class="popup__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</p>
+          <p class="popup__text">Для восстановления пароля введите свой логин в форму ниже и Вам будет выслано письмо с подтверждением восстановления пароля. </p>
+          <div class="pform">
+            <form class="js-rememb-form"> <input class="pfield" required type="text" placeholder="Логин"> <button class="psubmit" type="submit">Восстановить</button> </form>
+          </div>
+          <!-- 		<p class="popup__requir-text"><span>*</span> - поля обязательные для заполнения
+</p> -->
+        </div>
+      </div>
+      <!--end popup-->
+      <!--begin popup-->
+      <div class="popup  js-popup js-popup-callback">
+        <div class="popup__overlay js-popup-overlay"> </div>
+        <div class="popup__content js-popup-content">
+          <div class="popup__close js-close-popup"></div>
+          <p class="popup__title">Заказ обратного звонка</p>
+          <p class="popup__text">Заполните простую заявку <br> чтобы получить обратный звонок </p>
+          <div class="pform">
+            <form> <input class="pfield" type="text" required placeholder="Ваше имя"> <input class="pfield" type="text" required placeholder="Ваш телефон"> <button class="psubmit" type="submit">Перезвоните мне</button> </form>
           </div>
         </div>
       </div>
       <!--end popup-->
       <!--begin popup-->
-      <div class="popup js-popup-callback">
-        <div class="popup__overlay js-popup-overlay">
-          <div class="popup__content js-popup-content">
-            <div class="popup__close js-close"></div>
-            <p class="popup__title">Заказ обратного звонка</p>
-            <p class="popup__text">Заполните простую заявку <br> чтобы получить обратный звонок </p>
-            <div class="pform">
-              <form> <input class="pfield" type="text" placeholder="Ваше имя"> <input class="pfield" type="text" placeholder="Ваш телефон"> <button class="psubmit" type="submit">Перезвоните мне</button> </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--end popup-->
-      <!--begin popup-->
-      <div class="popup js-popup-thanks">
-        <div class="popup__overlay js-popup-overlay">
-          <div class="popup__content js-popup-content">
-            <div class="popup__close js-close"></div>
-            <p class="popup__title">Спасибо</p>
-            <p class="popup__title-sec">Ваши данные получены </p>
-            <p class="popup__text-big">Мы свяжемся с Вами <br> в ближайшее время </p>
-          </div>
+      <div class="popup js-popup js-popup-thanks">
+        <div class="popup__overlay js-popup-overlay"> </div>
+        <div class="popup__content js-popup-content">
+          <div class="popup__close js-close-popup"></div>
+          <p class="popup__title">Спасибо</p>
+          <p class="popup__title-sec">Ваши данные получены </p>
+          <p class="popup__text-big">Мы свяжемся с Вами <br> в ближайшее время </p>
         </div>
       </div>
       <!--end popup-->

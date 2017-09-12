@@ -1,0 +1,123 @@
+.popup
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	z-index: 15
+	+m
+		overflow-y: scroll
+	&__overlay
+		min-height: 100%
+		background: rgba(#000, 0.5)
+		+m
+			display: none
+	&__content
+		padding: 30px 60px 45px
+		+vcenter
+		width: 499px
+		// height: 438px
+		background-color: $white
+		border: 1px solid $blue
+		text-align: center
+		+m
+			overflow-y: scroll
+			width: 100%
+			height: 100%
+			border: none
+			position: relative
+			top: 0
+			left: 0
+			transform: translate(0, 0)
+			padding: 20px 20px 25px
+	&__title
+		font-size: 30px
+		font-weight: 700
+		color: $blue
+		margin-bottom: 15px
+		+m
+			margin-top: 50px
+	&__title-sec
+		font-size: 24px
+		color: $blue
+		margin-bottom: 30px
+	&__text-big
+		font-size: 24px
+		font-weight: 700
+	&__text
+		+rob
+		font-size: 18px
+		font-weight: 400
+		color: $black
+		margin-bottom: 30px
+	&__requir-text
+		margin-top: 25px
+		span
+			color: #fb1a03
+	&__close
+		position: absolute
+		width: 62px
+		height: 62px
+		background: $blue
+		top: 0
+		right: -80px
+		cursor: pointer
+		+trans
+		+m
+			right: 0
+			width: 40px
+			height: 40px
+		&:before
+			content: ''
+			+vcenter
+			+s(close)
+		&:hover
+			background: $orange3
+.pform
+	margin-bottom: 30px
+.pfield
+	display: block
+	width: 100%
+	height: 48px
+	line-height: 48px
+	background-color: $white
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.75)
+	margin-bottom: 28px
+	padding: 0 15px
+	+rob
+	font-size: 18px
+.psubmit
+	margin-top: 8px
+	display: inline-block
+	vertical-align: top
+	width: 250px
+	height: 44px
+	background: $orange3
+	line-height: 44px
+	+trans
+	font-size: 24px
+	color: $white
+	border: 1px solid $orange3
+	&:hover
+		color: $orange3
+		background: transparent
+.rememb, .preg
+	display: inline-block
+	vertical-align: top
+	color: $black
+
+.rememb
+	margin-right: 20px
+	padding: 5px 10px
+	background: $orange
+	border-radius: 5px
+	+trans
+	&:hover
+		color: $white
+.preg
+	position: relative
+	text-decoration: underline
+	margin-top: 5px
+	&:hover
+		text-decoration: none

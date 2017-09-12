@@ -71,6 +71,8 @@ a
 				width: 20px
 				height: 2px
 				background: $white
+				+m
+					display: none
 	&--blue
 		color: $blue
 		&:before
@@ -81,6 +83,8 @@ a
 			width: 20px
 			height: 2px
 			background: $blue
+			+m
+				display: none
 		p
 			position: relative
 			display: inline-block
@@ -93,6 +97,8 @@ a
 				width: 20px
 				height: 2px
 				background: $blue
+				+m
+					display: none
 		span
 			color: $black
 .title-s
@@ -112,12 +118,16 @@ a
 			margin-bottom: 0
 .two-col
 	+clr
+	&__left, &__right
+		width: 50%
+		+m
+			float: none
+			width: 100%
 	&__left
 		float: left
-		width: 50%
+		
 	&__right
 		float: right
-		width: 50%
 .btn
 	padding: 20px 60px
 	display: block
@@ -131,6 +141,10 @@ a
 	font-size: 24px
 	line-height: 1
 	font-weight: 700
+	+m
+		padding: 10px 20px
+		text-align: center
+		max-width: 280px
 	&:hover
 		background: transparent
 		color: $orange3
@@ -172,3 +186,8 @@ a
 		margin-bottom: 32px
 .is-hidden
 	overflow: hidden
+// [data-aos='slide-up']
+// 	opacity: 0
+// 	+trans
+// [data-aos='slide-up']:;mate 
+// 	opacity: 1

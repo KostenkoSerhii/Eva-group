@@ -1,8 +1,18 @@
 import sayHello from './lib/sayHello.js';
 import {isResp991, isResp1129} from './global.js';
+import AOS from 'aos'
 
 
 $(document).ready(function(){
+	if (!isResp991()) {
+		AOS.init({
+			duration: 300,
+			easing: 'ease-in-sine'
+		});
+
+	}
+	
+
 	$(".js-menu-btn").on("click", function(e){
 		e.stopPropagation();
 		$(".js-drop-mob").slideToggle(200)
@@ -14,7 +24,9 @@ $(document).ready(function(){
 	});
 
 	$(window).click(function() {
-		$(".js-drop-mob").slideUp(200)
+		if(isResp991()){
+			$(".js-drop-mob").slideUp(200);
+		}
 	});
 
 	$(".js-scroll").on("click", function(e){
@@ -24,13 +36,41 @@ $(document).ready(function(){
 		headerHeight = isResp991() ? 66 : 87;
 
 		$(".js-scroll").removeClass("active");
-		$this.addClass("active");
+		$(`.js-scroll[data-scroll = ${target}]`).addClass("active");
 		$("html, body").animate({scrollTop: $("." + target + "").offset().top - headerHeight }, 500);
 		// setTimeout(function(){$this.removeClass("active");}, 1500)
 
 	});
 
+	$(".js-popup-link").on('click', function(e){
+		e.preventDefault();
+		let $this = $(this),
+		popurRel = $this.attr('data-popup-open');
+		
+		$(".js-popup").slideUp(100);
+		$(`.${popurRel}`).fadeIn(300);
+		$("body").addClass("is-hidden");
+		if(isResp991()){
+			$(".js-drop-mob").slideUp(100);
+		}
+	});
+	$(".js-close-popup, .js-popup-overlay").on("click", closePopup);
 
+	function closePopup(self){
+		let $this = $(this),
+		parentPopup = $this.parents(".js-popup");
+		parentPopup.fadeOut(300);
+		$("body").removeClass("is-hidden")
+	};
+
+	$(".js-popup-content").on("click", function(e){
+		e.stopPropagation();
+	});
+
+	$(".js-reg-form").submit(function(e){
+		e.preventDefault();
+		console.log(1);
+	});
 	// function inWindow(s){
 	// 	let scrollTop = $(window).scrollTop();
 	// 	let windowHeight = $(window).height();
@@ -43,7 +83,7 @@ $(document).ready(function(){
 	// 		if(scrollTop <= offset.top && (el.height() + offset.top) < (scrollTop + windowHeight)){
 	// 			// result.push(this);
 	// 			console.log(this);
-				
+
 	// 		}
 	// 	})
 	// };

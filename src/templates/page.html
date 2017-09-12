@@ -13,16 +13,20 @@ title: Eva-group
 		<div class="fscreen__inner">
 			{% import "data/data.html" as tests %}
 			{% for test in tests.list %}
-			<div class="hexagon" style="background-image: url('img/hexagon-bg.png');">
-				<div class="hexagon__img">
-					{{mixins.icon(test.img)}}
-				</div>
-				<p class="hexagon__main-text">{{test.mainText}}</p>
-				<p class="hexagon__sec-text">{{test.secText}}</p>
+			<a class="hexagon {% if test.jsLink %}js-scroll {% endif %}"
+			data-scroll='{% if test.jsLink %}{{test.scrollTo}}{% endif %}'
+			href='{% if test.jsLink %}#{% else %}https://eva-group.net/sign-up {% endif %}'
+			style="background-image: url('img/hexagon-bg.png');">
+			<div class="hexagon__img">
+				{{mixins.icon(test.img)}}
 			</div>
-			{% endfor %}
-		</div>
+			<p class="hexagon__main-text">{{test.mainText}}</p>
+			<p class="hexagon__sec-text">{{test.secText}}</p>
+			<div class="hexagon__hover"></div>
+		</a>
+		{% endfor %}
 	</div>
+</div>
 </div>
 <!--begin stat-list-->
 <div class="stat-list">
@@ -30,8 +34,8 @@ title: Eva-group
 		<div class="stat-list__inner">
 			{% import "data/data.html" as tests %}
 			{% for test in tests.stat %}
-			<div class="stat-block">
-				<p class="stat-block__main-text">{{test.mainText}}<span>+</span></p>
+			<div class="stat-block" data-aos-once="true"  data-aos="slide-up" data-aos-delay="{{test.delay}}">
+				<p class="stat-block__main-text" >{{test.mainText}}<span>+</span></p>
 				<p class="stat-block__sec-text">{{test.secText}}</p>
 			</div>
 			{% endfor %}
@@ -74,7 +78,7 @@ title: Eva-group
 </div>
 <!--end about-->
 <!--begin plans-->
-<div class="plans js-plans" style="background-image: url('img/plans-bg.png');">
+<div class="plans js-plans">
 	<div class="l">
 		<h2 class="plans__title title-m title-m--white"><span>Тарифные планы</span></h2>
 
@@ -118,6 +122,7 @@ title: Eva-group
 				** Указана чистая прибыль клиента БЕЗ возврата тела депозита. Тело возвращается равными частями (по 3.85% в неделю)
 			</p>
 		</div>
+		<a  class="btn  js-popup-link plans__btn" href="#" data-popup-open="js-popup-reg">Зарегистрироваться</a>
 	</div>
 </div>
 <!--end plans-->
@@ -180,7 +185,7 @@ title: Eva-group
 <!--end earn-->
 
 <!--begin partner-prog-->
-<div class="pprog js-pprog" style="background-image: url('img/partner-bg.png');">
+<div class="pprog js-pprog">
 	<div class="l">
 		<h2 class="title-m title-m--white pprog__title"><span>Партнерская программа</span></h2>
 		<div class="pprog__descr-top article">
@@ -192,50 +197,55 @@ title: Eva-group
 			</p>
 		</div>
 		<h3 class="title-s pprog__sec-title">Вознаграждение по тарифным планам клиентов</h3>
-		<!--begin program table-->
-		<div class="ptable">
-			<div class="ptable__col ptable__col--first">
-				<div class="ptable__cell ptable__cell--name"></div>
-				<div class="ptable__cell ptable__cell--desc">С 1-го уровня</div>
-				<div class="ptable__cell ptable__cell--desc">Со 2-го уровня</div>
-				<div class="ptable__cell ptable__cell--desc">С 3-го уровня</div>
+		<!-- begin pprog__inner -->
+		<div class="pprog__inner">
+			<!--begin program table-->
+			<div class="ptable">
+				<div class="ptable__col ptable__col--first">
+					<div class="ptable__cell ptable__cell--name"></div>
+					<div class="ptable__cell ptable__cell--desc">С 1-го уровня</div>
+					<div class="ptable__cell ptable__cell--desc">Со 2-го уровня</div>
+					<div class="ptable__cell ptable__cell--desc">С 3-го уровня</div>
+				</div>
+				<div class="ptable__col">
+					<div class="ptable__cell ptable__cell--name">Bronze</div>
+					<div class="ptable__cell">7%</div>
+					<div class="ptable__cell">2%</div>
+					<div class="ptable__cell">-</div>
+				</div>
+				<div class="ptable__col">
+					<div class="ptable__cell ptable__cell--name">Silver</div>
+					<div class="ptable__cell">8,5%</div>
+					<div class="ptable__cell">2,5%</div>
+					<div class="ptable__cell">1%</div>
+				</div>
+				<div class="ptable__col">
+					<div class="ptable__cell ptable__cell--name">Gold</div>
+					<div class="ptable__cell">11%</div>
+					<div class="ptable__cell">3,5%</div>
+					<div class="ptable__cell">1,5%</div>
+				</div>
+				<div class="ptable__col">
+					<div class="ptable__cell ptable__cell--name">Platinum</div>
+					<div class="ptable__cell">15%</div>
+					<div class="ptable__cell">5%</div>
+					<div class="ptable__cell">2%</div>
+				</div>
+				<div class="ptable__col">
+					<div class="ptable__cell ptable__cell--name">Diamond</div>
+					<div class="ptable__cell">18%</div>
+					<div class="ptable__cell">7%</div>
+					<div class="ptable__cell">3%</div>
+				</div>
 			</div>
-			<div class="ptable__col">
-				<div class="ptable__cell ptable__cell--name">Bronze</div>
-				<div class="ptable__cell">7%</div>
-				<div class="ptable__cell">2%</div>
-				<div class="ptable__cell">-</div>
-			</div>
-			<div class="ptable__col">
-				<div class="ptable__cell ptable__cell--name">Silver</div>
-				<div class="ptable__cell">8,5%</div>
-				<div class="ptable__cell">2,5%</div>
-				<div class="ptable__cell">1%</div>
-			</div>
-			<div class="ptable__col">
-				<div class="ptable__cell ptable__cell--name">Gold</div>
-				<div class="ptable__cell">11%</div>
-				<div class="ptable__cell">3,5%</div>
-				<div class="ptable__cell">1,5%</div>
-			</div>
-			<div class="ptable__col">
-				<div class="ptable__cell ptable__cell--name">Platinum</div>
-				<div class="ptable__cell">15%</div>
-				<div class="ptable__cell">5%</div>
-				<div class="ptable__cell">2%</div>
-			</div>
-			<div class="ptable__col">
-				<div class="ptable__cell ptable__cell--name">Diamond</div>
-				<div class="ptable__cell">18%</div>
-				<div class="ptable__cell">7%</div>
-				<div class="ptable__cell">3%</div>
-			</div>
+			<!--end program table-->
 		</div>
-		<!--end program table-->
+		<!-- end pprog__inner -->
+
 		<p class="pprog__descr-bottom">
 			* Вознаграждение рассчитывается от чистой прибыли клиента, без учета взврта тела депозита. Начисление и выплата вознаграждения происходит еженедельно при начислении прибыликлиентам. Вывод доступен в любой момент.
 		</p>
-		<a href="#" class="btn pprog__btn-reg">Зарегистрироваться</a>
+		<a href="#" data-popup-open="js-popup-reg" class="btn pprog__btn-reg js-popup-link">Зарегистрироваться</a>
 	</div>
 </div>
 <!--end partner-prog-->
@@ -253,7 +263,7 @@ title: Eva-group
 					<a class="callback__link" href="mailto:partners@eva-group.net">partners@eva-group.net</a>
 				</div>
 				<p>С нами можно связаться также по телефону</p>
-				<a class="btn-border" href="#">Заказать звонок</a>
+				<a class="btn-border js-popup-link" data-popup-open="js-popup-callback" href="#">Заказать звонок</a>
 			</div>
 			<div class="two-col__right">
 				<p>Если не хотите писать то можете оставить
