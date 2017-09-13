@@ -78,7 +78,7 @@ $(document).ready(function(){
 				$(".js-popup").fadeOut(100);
 				$(".js-popup-thanks").fadeIn(300);
 				console.log("success")
-				console.log(data);
+				// console.log(data);
 
 			}
 		})
