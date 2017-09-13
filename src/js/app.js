@@ -47,7 +47,7 @@ $(document).ready(function(){
 		let $this = $(this),
 		popurRel = $this.attr('data-popup-open');
 		
-		$(".js-popup").slideUp(100);
+		$(".js-popup").fadeOut(100);
 		$(`.${popurRel}`).fadeIn(300);
 		$("body").addClass("is-hidden");
 		if(isResp991()){
@@ -67,9 +67,21 @@ $(document).ready(function(){
 		e.stopPropagation();
 	});
 
-	$(".js-reg-form").submit(function(e){
+	$('form').submit(function(e){
 		e.preventDefault();
 		console.log(1);
+		$.ajax({
+			url: 'mail.php',	
+			type: 'POST',
+			data: $(this).serialize(),
+			success: function(){
+				$(".js-popup").fadeOut(100);
+				$(".js-popup-thanks").fadeIn(300);
+				console.log("success")
+				console.log(data);
+
+			}
+		})
 	});
 	// function inWindow(s){
 	// 	let scrollTop = $(window).scrollTop();
