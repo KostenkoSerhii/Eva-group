@@ -226,7 +226,7 @@
           <div class="plans__descr">
             <p>* Начисление и вывод прибыли по депозиту происходит один раз в неделю по субботам. </p>
             <p> ** Указана чистая прибыль клиента БЕЗ возврата тела депозита. Тело возвращается равными частями (по 3.85% в неделю) </p>
-          </div> <a class="btn  js-popup-link plans__btn" href="#" data-popup-open="js-popup-reg">Зарегистрироваться</a> </div>
+          </div> <a class="btn   plans__btn" href="https://eva-group.net/sign-up">Зарегистрироваться</a> </div>
       </div>
       <!--end plans-->
       <!--begin earn-->
@@ -323,8 +323,8 @@
             <!--end program table-->
           </div>
           <!-- end pprog__inner -->
-          <p class="pprog__descr-bottom"> * Вознаграждение рассчитывается от чистой прибыли клиента, без учета взврта тела депозита. Начисление и выплата вознаграждения происходит еженедельно при начислении прибыликлиентам. Вывод доступен в любой момент. </p> <a href="#" data-popup-open="js-popup-reg"
-            class="btn pprog__btn-reg js-popup-link">Зарегистрироваться</a> </div>
+          <p class="pprog__descr-bottom"> * Вознаграждение рассчитывается от чистой прибыли клиента, без учета взврта тела депозита. Начисление и выплата вознаграждения происходит еженедельно при начислении прибыликлиентам. Вывод доступен в любой момент. </p> <a href="https://eva-group.net/sign-up"
+            class="btn pprog__btn-reg">Зарегистрироваться</a> </div>
       </div>
       <!--end partner-prog-->
       <!-- begin callback -->
@@ -384,7 +384,8 @@
           <p class="popup__title">Вход</p>
           <p class="popup__text">Заполните форму входа </p>
           <div class="pform">
-            <form class="js-reg-form"> <input class="pfield" required type="text" placeholder="Ваше имя*"> <input class="pfield" required type="text" placeholder="Ваш E-mail*"> <button class="psubmit" type="submit">Войти</button> </form>
+            <form action="/login" method="post" class="js-reg-form popupLoginLabel"> <input class="pfield popupLoginLabel" required type="text" name="username" placeholder="Ваше имя*"> <input class="pfield popupLoginLabel" required type="text" name="password" placeholder="Ваш E-mail*"> <button class="psubmit popupLoginLabel"
+                type="submit">Войти</button> </form>
           </div> <a class="rememb js-popup-link" data-popup-open="js-popup-rememb" href="#">Забыли пароль?</a> <a class="preg" href="https://eva-group.net/sign-up">   Регистрация</a>
           <!-- 		<p class="popup__requir-text"><span>*</span> - поля обязательные для заполнения
 </p> -->
@@ -399,7 +400,7 @@
           <p class="popup__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</p>
           <p class="popup__text">Для восстановления пароля введите свой логин в форму ниже и Вам будет выслано письмо с подтверждением восстановления пароля. </p>
           <div class="pform">
-            <form class="js-rememb-form"> <input class="pfield" required type="text" placeholder="Логин"> <button class="psubmit" type="submit">Восстановить</button> </form>
+            <form class="js-rememb-form" method="post" action="/password-recovery"> <input type="hidden" value="recovery" name="action"> <input class="pfield" required type="text" placeholder="Логин"> <button class="psubmit" type="submit">Восстановить</button> </form>
           </div>
           <!-- 		<p class="popup__requir-text"><span>*</span> - поля обязательные для заполнения
 </p> -->
@@ -414,7 +415,7 @@
           <p class="popup__title">Заказ обратного звонка</p>
           <p class="popup__text">Заполните простую заявку <br> чтобы получить обратный звонок </p>
           <div class="pform">
-            <form> <input class="pfield" type="text" required placeholder="Ваше имя"> <input class="pfield" type="text" required placeholder="Ваш телефон"> <button class="psubmit" type="submit">Перезвоните мне</button> </form>
+            <form action="/send.php" method="post"> <input class="pfield" type="text" name="name" required placeholder="Ваше имя"> <input class="pfield" type="text" name="phone" required placeholder="Ваш телефон"> <button class="psubmit" type="submit">Перезвоните мне</button> </form>
           </div>
         </div>
       </div>
