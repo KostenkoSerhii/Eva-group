@@ -84,21 +84,21 @@ $(document).ready(function(){
 	// 	})
 	// });
 
-	$('form.formspree').submit(function(e){
-		e.preventDefault();
-		$.ajax({
-			url: "https://formspree.io/sergey@coderiver.com.ua", 
-			method: "POST",
-			data: $(this).serialize(),
-			dataType: "json",
-			success: function(){
-				$(".js-popup").fadeOut(100);
-				$(".js-popup-thanks").fadeIn(300);
-				console.log("success");
-				// console.log(data);
-			}
-		});
-	});
+	// $('form.formspree').submit(function(e){
+	// 	e.preventDefault();
+	// 	$.ajax({
+	// 		url: "https://formspree.io/sergey@coderiver.com.ua", 
+	// 		method: "POST",
+	// 		data: $(this).serialize(),
+	// 		dataType: "json",
+	// 		success: function(){
+	// 			$(".js-popup").fadeOut(100);
+	// 			$(".js-popup-thanks").fadeIn(300);
+	// 			console.log("success");
+	// 			// console.log(data);
+	// 		}
+	// 	});
+	// });
 	// function inWindow(s){
 	// 	let scrollTop = $(window).scrollTop();
 	// 	let windowHeight = $(window).height();
