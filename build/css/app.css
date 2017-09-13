@@ -136,16 +136,20 @@ html {
   content: "";
 }
 
-.icon-hexagon1:before {
+.icon-hex-hover:before {
   content: "";
 }
 
-.icon-hexagon2:before {
+.icon-hexagon1:before {
   content: "";
 }
 
-.icon-hexagon3:before {
+.icon-hexagon2:before {
   content: "";
+}
+
+.icon-hexagon3:before {
+  content: "";
 }
 
 .icon-about1 {
@@ -206,6 +210,12 @@ html {
   width: 0.53em;
   height: 1em;
   fill: #000;
+}
+
+.icon-hex-hover {
+  width: 1.13em;
+  height: 1em;
+  fill: #F5A303;
 }
 
 .icon-hexagon1 {
@@ -1550,6 +1560,11 @@ a {
   vertical-align: top;
   margin: 0 9px;
   padding: 30px 65px 0;
+  position: relative;
+}
+
+.hexagon:hover svg {
+  opacity: 1;
 }
 
 .hexagon__img {
@@ -1584,6 +1599,19 @@ a {
 
 .hexagon__sec-text {
   font-weight: 300;
+}
+
+.hexagon__hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hexagon__hover svg {
+  width: 326px;
+  height: 291px;
+  transition: all 0.2s ease;
+  opacity: 0;
 }
 
 .stat-list {
@@ -2344,6 +2372,10 @@ a {
   }
   .hexagon__main-text, .hexagon__sec-text{
     font-size: 22px;
+  }
+  .hexagon__hover svg{
+    width: 280px;
+    height: 250px;
   }
   .stat-block{
     max-width: 170px;

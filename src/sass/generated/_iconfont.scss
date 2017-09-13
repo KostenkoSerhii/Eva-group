@@ -19,9 +19,10 @@ $icon-earn2: "\EA07";
 $icon-earn3: "\EA08";
 $icon-earn4: "\EA09";
 $icon-facebook: "\EA0A";
-$icon-hexagon1: "\EA0B";
-$icon-hexagon2: "\EA0C";
-$icon-hexagon3: "\EA0D";
+$icon-hex-hover: "\EA0B";
+$icon-hexagon1: "\EA0C";
+$icon-hexagon2: "\EA0D";
+$icon-hexagon3: "\EA0E";
 
 
 %icon {
@@ -50,6 +51,7 @@ $icon-hexagon3: "\EA0D";
 .icon-earn3:before { content: $icon-earn3; }
 .icon-earn4:before { content: $icon-earn4; }
 .icon-facebook:before { content: $icon-facebook; }
+.icon-hex-hover:before { content: $icon-hex-hover; }
 .icon-hexagon1:before { content: $icon-hexagon1; }
 .icon-hexagon2:before { content: $icon-hexagon2; }
 .icon-hexagon3:before { content: $icon-hexagon3; }

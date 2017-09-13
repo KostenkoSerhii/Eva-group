@@ -168,6 +168,7 @@
 	vertical-align: top
 	margin: 0 9px
 	padding: 30px 65px 0
+	position: relative
 	+d
 		width: 280px
 		background-size: contain
@@ -177,6 +178,9 @@
 	+m
 		display: block
 		margin: 0 auto 20px
+	&:hover
+		svg
+			opacity: 1
 	&__img
 		margin: 0 auto
 		position: relative
@@ -204,6 +208,18 @@
 			font-size: 22px
 	&__sec-text
 		font-weight: 300
+	&__hover
+		position: absolute
+		left: 0
+		top: 0
+		svg
+			width: 326px
+			height: 291px
+			+trans
+			opacity: 0
+			+d
+				width: 280px
+				height: 250px
 .stat-list
 	background: $blue
 	position: relative
