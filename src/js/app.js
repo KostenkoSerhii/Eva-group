@@ -1,9 +1,12 @@
 import sayHello from './lib/sayHello.js';
 import {isResp991, isResp1129} from './global.js';
 import AOS from 'aos'
+import Popup from './popup.js'
 
 
 $(document).ready(function(){
+
+	new Popup({selector: ".js-popup"});
 	if (!isResp991()) {
 		AOS.init({
 			duration: 300,
@@ -49,12 +52,12 @@ $(document).ready(function(){
 		
 		$(".js-popup").fadeOut(100);
 		$(`.${popurRel}`).fadeIn(300);
-		$("body").addClass("is-hidden");
+		// $("body").addClass("is-hidden");
 		if(isResp991()){
 			$(".js-drop-mob").slideUp(100);
 		}
 	});
-	$(".js-close-popup, .js-popup-overlay").on("click", closePopup);
+	// $(".js-close-popup, .js-popup-overlay").on("click", closePopup);
 
 	function closePopup(self){
 		let $this = $(this),
