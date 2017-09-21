@@ -1,33 +1,76 @@
 export default class Popup {
 
 	constructor(options){
-		this._el = document.querySelector(options.selector);
+		this._els = document.querySelectorAll(options.selector);
 		this._body = document.body;
-		// for(let i = 0 ; i < this._el.length; i++){
-			this._overlay = this._el.querySelector(".js-popup-overlay");
-			this._content = this._el.querySelector(".js-popup-content");
-			this._closeBtn = this._el.querySelector(".js-close-popup");
-			console.log(this._el);
-		// }
 		this._init();
-
 	}
 
 	_init(){
+		this._loop()
 		// console.log(this._el);
-		console.log(this._closeBtn);
-		this._closePopup();
+		// console.log(this._closeBtn);
+		// this._addHideClickEvent();
+		// console.log(this._closeBtn);
 	}
-	_closePopup(){
-		// for(let i = 0 ; i < this._el.length; i++){
-			this._overlay.addEventListener("click", this._hidePopup.bind(this));
-			this._closeBtn.addEventListener("click", this._hidePopup.bind(this));
-			// console.log(this._el[i]);
-		// }
+	_loop(){
+		for(let i = 0 ; i < this._els.length; i++){
+			// this._findDom(this._els[i])
+			this._addHideClickEvent(this._els[i])
+		}
 	}
-	_hidePopup(){
-			this._el.style.display="none"
+	_findDom(el){
+		this._overlay = el.querySelector(".js-popup-overlay");
+		this._content = el.querySelector(".js-popup-content");
+		this._closeBtn = el.querySelector(".js-close-popup");
+		// this._this = el;
+		
+	}
 
+
+	_addHideClickEvent(el){
+		// let closePopup = (event) => {
+
+
+		// };
+
+		el.querySelector(".js-popup-overlay").addEventListener("click", this._hidefromOverlay.bind(this));
+		el.querySelector(".js-close-popup").addEventListener("click", this._hidefromCloseBtn.bind(this));
+
+
+	}
+	_hidefromOverlay(el){
+		let target = event.target;
+		target.parentNode.style.display="none"
+		this._fadeOut(target.parentNode)
+	}
+	_hidefromCloseBtn(el){
+		let target = event.target;
+		target.parentNode.parentNode.style.display="none"
+		this._fadeOut(target.parentNode.parentNode)
+	}
+
+	_fadeOut(el){
+		el.style.opacity = 1;
+		(function fade() {
+			if ((el.style.opacity -= .1) < 0) {
+				el.style.display = "none";
+			} else {
+				requestAnimationFrame(fade);
+			}
+		})();
+	}
+
+	_fadeIn(el, display){
+		el.style.opacity = 0;
+		el.style.display = display || "block";
+		(function fade() {
+			let val = parseFloat(el.style.opacity);
+			if (!((val += .1) > 1)) {
+				el.style.opacity = val;
+				requestAnimationFrame(fade);
+			}
+		})();
 	}
 	// end
 };
