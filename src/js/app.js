@@ -7,6 +7,7 @@ import Popup from './popup.js'
 $(document).ready(function(){
 
 	new Popup({selector: ".js-popup"});
+
 	if (!isResp991()) {
 		AOS.init({
 			duration: 300,
@@ -45,18 +46,31 @@ $(document).ready(function(){
 
 	});
 
-	$(".js-popup-link").on('click', function(e){
-		e.preventDefault();
-		let $this = $(this),
-		popurRel = $this.attr('data-popup-open');
-		
-		$(".js-popup").fadeOut(100);
-		$(`.${popurRel}`).fadeIn(300);
-		// $("body").addClass("is-hidden");
-		if(isResp991()){
-			$(".js-drop-mob").slideUp(100);
-		}
+	[].forEach.call(document.querySelectorAll('.js-popup-link'), function (el) {
+		el.addEventListener("click", function(e){
+			e.preventDefault();
+			let linkRel = el.getAttribute('data-popup-open'),
+			popup = document.querySelector(`[data-popup = ${linkRel}]`);
+			console.log(popup);
+			  // console.log($(popup)[0]);
+			  // $(`[data-popup = ${linkRel}]`).trigger("click-open");
+			 popup.dispatchEvent("click-open")
+			})
 	});
+
+
+	// $(".js-popup-link").on('click', function(e){
+	// 	e.preventDefault();
+	// 	let $this = $(this),
+	// 	popurRel = $this.attr('data-popup-open');
+	// 	console.log(popurRel);
+	// 	$(".js-popup").fadeOut(100);
+	// 	$(`.${popurRel}`).fadeIn(300);
+	// 	$("body").addClass("is-hidden");
+	// 	if(isResp991()){
+	// 		$(".js-drop-mob").slideUp(100);
+	// 	}
+	// });
 	// $(".js-close-popup, .js-popup-overlay").on("click", closePopup);
 
 	function closePopup(self){
