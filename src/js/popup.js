@@ -2,46 +2,41 @@ export default class Popup {
 
 	constructor(options){
 		this._els = document.querySelectorAll(options.selector);
-		this._body = document.body;
-		this._init();
+		this.init();
 	}
 
-	_init(){
-		this._loop()
+	init(){
+		this._loop();
 	}
+
 	_loop(){
 		for(let i = 0 ; i < this._els.length; i++){
 			this._addHideClickEvent(this._els[i]);
-			this._openEvent(this._els[i]);
+			this._open(this._els[i], this._els[i].getAttribute('data-popup'))
+	console.log(1);
 		}
 	}
-	_findDom(el){
-		this._overlay = el.querySelector(".js-popup-overlay");
-		this._content = el.querySelector(".js-popup-content");
-		this._closeBtn = el.querySelector(".js-close-popup");	
-	}
-	// _addLinkOpenEvent(el){
-	// 	let targetAttr = el.getAttribute("data-popup");
-	// 	let link = document.querySelector(`a[data-popup-open = ${targetAttr}]`);
-	// 	console.log(link);
-	// }
-	_openEvent(el){
-		el.addEventListener('click-open', this._fadeIn.bind(this));
+
+	_open(el, target){
+		document.querySelector(`.js-popup-link[data-popup-open=${target}]`).addEventListener('click', (e) => {
+			// console.log(this);
+			e.preventDefault();
+			this._fadeIn(el);
+		});
 	}
 
 	_addHideClickEvent(el){
-
 		el.querySelector(".js-popup-overlay").addEventListener("click", this._hidefromOverlay.bind(this));
 		el.querySelector(".js-close-popup").addEventListener("click", this._hidefromCloseBtn.bind(this));
 	}
+
 	_hidefromOverlay(el){
 		let target = event.target;
-		// target.parentNode.style.display="none"
 		this._fadeOut(target.parentNode)
 	}
+
 	_hidefromCloseBtn(el){
 		let target = event.target;
-		// target.parentNode.parentNode.style.display="none"
 		this._fadeOut(target.parentNode.parentNode)
 	}
 
@@ -58,7 +53,7 @@ export default class Popup {
 
 	_fadeIn(el, display){
 		el.style.opacity = 0;
-		el.style.display = display || "block";
+		el.style.display = "block";
 		(function fade() {
 			let val = parseFloat(el.style.opacity);
 			if (!((val += .1) > 1)) {
